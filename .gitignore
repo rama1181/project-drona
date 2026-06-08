@@ -1,0 +1,16 @@
+# API Keys & secrets — never commit these
+.env
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Models (large binary files)
+models/*.pkl
+
+# Database
+*.db
+
+# OS files
+.DS_Store
+Thumbs.db

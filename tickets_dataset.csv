@@ -1,0 +1,823 @@
+company_name,employee_name,employee_email,ticket_subject,ticket_description,ticket_text,received_channel,incident_type,ml_priority,keyword_priority,final_priority,department,sentiment,root_cause,resolution_steps,ai_recommended_resolution,status,assigned_engineer,engineer_remarks,created_date,closed_date,resolution_time_mins,sla_mins,sla_status,escalation_required,failure_case_flag
+MedSystems,Amanda Brown,amanda.brown@medsystems.com,Laptop screen flickers and blue screen of death,"My Lenovo laptop screen is flickering continuously, followed by a Blue Screen (BSOD). Client call scheduled, customer impacted.","Laptop screen flickers and blue screen of death. My Lenovo laptop screen is flickering continuously, followed by a Blue Screen (BSOD). Client call scheduled, customer impacted.",Chat,Hardware,High,High,High,Desktop Support,Negative,Faulty Intel HD Graphics driver causing memory dump crash.,"1. Boot laptop into Safe Mode.
+2. Uninstall current display drivers.
+3. Download and install verified Lenovo stable GPU drivers.
+4. Restart laptop.","AI Recommended Resolution:
+1. Boot laptop into Safe Mode.
+2. Uninstall current display drivers.
+3. Download and install verified Lenovo stable GPU drivers.
+4. Restart laptop.",Done,Jack Hardware,Resolved as per standard procedures. Tested and verified.,2026-05-24 12:39:33,2026-05-24 14:19:21,99.8,180,Met,0,0
+TechCorp Services,James Brown,james.brown@techcorpservices.com,Complete outage in office WiFi network,"The entire second floor is experiencing a complete outage on the office WiFi network. No devices can connect, server down for local services.","Complete outage in office WiFi network. The entire second floor is experiencing a complete outage on the office WiFi network. No devices can connect, server down for local services.",Email,Network,Critical,Critical,Critical,Infra Team,Negative,Core router stack loop due to a misconfigured VLAN switch.,"1. Log into core router switch interface.
+2. Reset switch loop protection control.
+3. Restore router default VLAN routing configuration.
+4. Restart office access points.","AI Recommended Resolution:
+1. Log into core router switch interface.
+2. Reset switch loop protection control.
+3. Restore router default VLAN routing configuration.
+4. Restart office access points.",Done,Steven Cable,Resolved as per standard procedures. Tested and verified.,2026-05-24 15:39:33,2026-05-24 16:11:09,31.6,120,Met,0,0
+TCS Global,Jessica Lopez,jessica.lopez@tcsglobal.com,Onboarding request for new engineer starting next week,"Please complete onboarding setup for the new team member, including account creation and onboarding documents.","Onboarding request for new engineer starting next week. Please complete onboarding setup for the new team member, including account creation and onboarding documents.",Manual,HR,Low,Low,Low,HR IT Team,Positive,Standard recruitment profile pipeline entry.,"1. Create AD login credentials.
+2. Allocate laptop and workspace peripherals.
+3. Provision Microsoft 365 license.
+4. Schedule HR welcome briefing.","AI Recommended Resolution:
+1. Create AD login credentials.
+2. Allocate laptop and workspace peripherals.
+3. Provision Microsoft 365 license.
+4. Schedule HR welcome briefing.",Done,Heidi HR,Resolved as per standard procedures. Tested and verified.,2026-05-24 18:55:33,2026-05-24 22:09:27,193.9,960,Met,0,0
+TechCorp Services,William Johnson,william.johnson@techcorpservices.com,Outlook email issue - cannot send emails,Outlook is throwing an error '0x8004010F' and won't send emails. Intermittent email issue.,Outlook email issue - cannot send emails. Outlook is throwing an error '0x8004010F' and won't send emails. Intermittent email issue.,Service Portal,Messaging,Medium,Medium,Medium,Messaging Team,Neutral,Corrupted Outlook offline address book file (OAB).,"1. Close Outlook.
+2. Delete local .oab files from AppData cache.
+3. Re-open Outlook and force send/receive sync.","AI Recommended Resolution:
+1. Close Outlook.
+2. Delete local .oab files from AppData cache.
+3. Re-open Outlook and force send/receive sync.",Done,Gary Outlook,Resolved as per standard procedures. Tested and verified.,2026-05-24 21:44:33,2026-05-25 03:35:09,350.6,480,Met,0,0
+TechCorp Services,William Johnson,william.johnson@techcorpservices.com,Database issue - query locking causing timeouts,"Database issue. Long running lock blocks multiple critical queries on application database, causing slow response times.","Database issue - query locking causing timeouts. Database issue. Long running lock blocks multiple critical queries on application database, causing slow response times.",Service Portal,Database,Medium,Medium,Medium,Database Team,Neutral,Unindexed foreign keys causing table scans and deadlock loops.,"1. Run sp_who2 to identify blocking SPID.
+2. Terminate blocker process safely.
+3. Add missing query index.
+4. Refactor transaction isolation level.","AI Recommended Resolution:
+1. Run sp_who2 to identify blocking SPID.
+2. Terminate blocker process safely.
+3. Add missing query index.
+4. Refactor transaction isolation level.",Done,Carl Query,Resolved as per standard procedures. Tested and verified.,2026-05-25 01:12:33,2026-05-25 05:26:09,253.6,480,Met,0,0
+FinBank Corp,Ashley Johnson,ashley.johnson@finbankcorp.com,Router configuration error in branch office,Branch office router is slow and throwing intermittent packet loss errors. Intermittent issue with routing tables.,Router configuration error in branch office. Branch office router is slow and throwing intermittent packet loss errors. Intermittent issue with routing tables.,Chat,Network,Medium,Medium,Medium,Infra Team,Neutral,Corrupted BGP routing table entry on the branch router gateway.,"1. Reset branch gateway router.
+2. Clear BGP cache routing protocols.
+3. Re-sync routing metrics with the primary hub.","AI Recommended Resolution:
+1. Reset branch gateway router.
+2. Clear BGP cache routing protocols.
+3. Re-sync routing metrics with the primary hub.",Done,Steven Cable,Resolved as per standard procedures. Tested and verified.,2026-05-25 03:40:33,2026-05-25 05:47:51,127.3,480,Met,0,0
+CloudSphere,Lisa Brown,lisa.brown@cloudsphere.com,Production payment failure in checkout portal,"The online payment failure is occurring. Production down, customers cannot complete purchases. Complete outage on payment gateway.","Production payment failure in checkout portal. The online payment failure is occurring. Production down, customers cannot complete purchases. Complete outage on payment gateway.",Service Portal,Application,Critical,Critical,Critical,Application Support,Negative,SSL certificate handshake error with payment processor due to obsolete TLS protocol version.,"1. Review application exception logs.
+2. Enable TLS 1.3 in payment module configuration.
+3. Deploy hotfix to prod cluster.
+4. Perform transaction test.","AI Recommended Resolution:
+1. Review application exception logs.
+2. Enable TLS 1.3 in payment module configuration.
+3. Deploy hotfix to prod cluster.
+4. Perform transaction test.",Done,Anna Code,Resolved as per standard procedures. Tested and verified.,2026-05-25 06:48:33,2026-05-25 07:58:15,69.7,120,Met,0,0
+FinBank Corp,Jessica Davis,jessica.davis@finbankcorp.com,Request for a new wireless keyboard and desktop mouse,My keyboard has some keys that do not work. Submitting an information request for a replacement keyboard.,Request for a new wireless keyboard and desktop mouse. My keyboard has some keys that do not work. Submitting an information request for a replacement keyboard.,Manual,Hardware,Low,Low,Low,Desktop Support,Positive,Physical wear and tear of keyboard membrane.,"1. Assign replacement keyboard from desktop support inventory.
+2. Update hardware serial number in asset tracker.","AI Recommended Resolution:
+1. Assign replacement keyboard from desktop support inventory.
+2. Update hardware serial number in asset tracker.",Done,Jack Hardware,Resolved as per standard procedures. Tested and verified.,2026-05-25 10:12:33,2026-05-25 20:07:15,594.7,960,Met,0,0
+TCS Global,Daniel Miller,daniel.miller@tcsglobal.com,Complete outage in office WiFi network,"The entire second floor is experiencing a complete outage on the office WiFi network. No devices can connect, server down for local services.","Complete outage in office WiFi network. The entire second floor is experiencing a complete outage on the office WiFi network. No devices can connect, server down for local services.",Service Portal,Network,Medium,Critical,Critical,Infra Team,Negative,Core router stack loop due to a misconfigured VLAN switch.,"1. Log into core router switch interface.
+2. Reset switch loop protection control.
+3. Restore router default VLAN routing configuration.
+4. Restart office access points.","AI Recommended Resolution:
+1. Log into core router switch interface.
+2. Reset switch loop protection control.
+3. Restore router default VLAN routing configuration.
+4. Restart office access points.",Done,Robert Infra,Resolved as per standard procedures. Tested and verified.,2026-05-25 12:52:33,2026-05-25 14:06:45,74.2,120,Met,0,0
+Apex Retail,David Jones,david.jones@apexretail.com,Application error - slow reports query,The inventory system reports dashboard is very slow and times out frequently. Report issue.,Application error - slow reports query. The inventory system reports dashboard is very slow and times out frequently. Report issue.,Chat,Application,Medium,Medium,Medium,Application Support,Neutral,Missing index on transaction_date column in reporting database.,"1. Analyze report query execution plan.
+2. Identify missing query indices.
+3. Implement index optimization.
+4. Verify dashboard rendering speed.","AI Recommended Resolution:
+1. Analyze report query execution plan.
+2. Identify missing query indices.
+3. Implement index optimization.
+4. Verify dashboard rendering speed.",Done,Dave Debugger,Resolved as per standard procedures. Tested and verified.,2026-05-25 16:34:33,2026-05-25 21:59:45,325.2,480,Met,0,0
+EduLearn Inc,Lisa Brown,lisa.brown@edulearninc.com,Database corruption in SQL Server,"Database corruption detected on DB-PROD-01. Customer table reports data page corruptions, database corruption threat, severe data loss risk.","Database corruption in SQL Server. Database corruption detected on DB-PROD-01. Customer table reports data page corruptions, database corruption threat, severe data loss risk.",Chat,Database,Critical,Critical,Critical,Database Team,Negative,Disk hardware controller write failure corrupted SQL database data pages.,"1. Run DBCC CHECKDB command.
+2. Restore database from last clean backup differential.
+3. Re-apply transaction logs.
+4. Validate record counts.","AI Recommended Resolution:
+1. Run DBCC CHECKDB command.
+2. Restore database from last clean backup differential.
+3. Re-apply transaction logs.
+4. Validate record counts.",Done,Nora Index,Resolved as per standard procedures. Tested and verified.,2026-05-25 19:35:33,2026-05-25 20:59:39,84.1,120,Met,0,0
+InnoTech Ltd,Karen Martinez,karen.martinez@innotechltd.com,Laptop screen flickers and blue screen of death,"My Lenovo laptop screen is flickering continuously, followed by a Blue Screen (BSOD). Client call scheduled, customer impacted.","Laptop screen flickers and blue screen of death. My Lenovo laptop screen is flickering continuously, followed by a Blue Screen (BSOD). Client call scheduled, customer impacted.",Email,Hardware,High,High,High,Desktop Support,Negative,Faulty Intel HD Graphics driver causing memory dump crash.,"1. Boot laptop into Safe Mode.
+2. Uninstall current display drivers.
+3. Download and install verified Lenovo stable GPU drivers.
+4. Restart laptop.","AI Recommended Resolution:
+1. Boot laptop into Safe Mode.
+2. Uninstall current display drivers.
+3. Download and install verified Lenovo stable GPU drivers.
+4. Restart laptop.",Done,Peter Screws,Resolved as per standard procedures. Tested and verified.,2026-05-25 21:47:33,2026-05-25 23:17:57,90.4,180,Met,0,0
+TCS Global,Michael Hernandez,michael.hernandez@tcsglobal.com,Phishing email detected targeting team inbox,We received an email looking like it's from executive leadership asking for urgent bank info. Possible phishing attempt.,Phishing email detected targeting team inbox. We received an email looking like it's from executive leadership asking for urgent bank info. Possible phishing attempt.,Service Portal,Security,Critical,Critical,Critical,Security Team,Negative,Spoofed email domain bypassing DMARC policies.,"1. Analyze email header headers.
+2. Block sender domain at Exchange Gateway.
+3. Delete phishing emails from user mailboxes.
+4. Update SPF/DKIM policy records.","AI Recommended Resolution:
+1. Analyze email header headers.
+2. Block sender domain at Exchange Gateway.
+3. Delete phishing emails from user mailboxes.
+4. Update SPF/DKIM policy records.",Done,Bob Secure,Resolved as per standard procedures. Tested and verified.,2026-05-26 01:33:33,2026-05-26 01:54:27,20.9,120,Met,0,0
+Apex Retail,John Lopez,john.lopez@apexretail.com,Database corruption in SQL Server,"Database corruption detected on DB-PROD-01. Customer table reports data page corruptions, database corruption threat, severe data loss risk.","Database corruption in SQL Server. Database corruption detected on DB-PROD-01. Customer table reports data page corruptions, database corruption threat, severe data loss risk.",Service Portal,Database,Critical,Critical,Critical,Database Team,Negative,Disk hardware controller write failure corrupted SQL database data pages.,"1. Run DBCC CHECKDB command.
+2. Restore database from last clean backup differential.
+3. Re-apply transaction logs.
+4. Validate record counts.","AI Recommended Resolution:
+1. Run DBCC CHECKDB command.
+2. Restore database from last clean backup differential.
+3. Re-apply transaction logs.
+4. Validate record counts.",Done,Nora Index,Resolved as per standard procedures. Tested and verified.,2026-05-26 03:48:33,2026-05-26 04:48:21,59.8,120,Met,0,0
+MedSystems,James Williams,james.williams@medsystems.com,Laptop screen flickers and blue screen of death,"My Lenovo laptop screen is flickering continuously, followed by a Blue Screen (BSOD). Client call scheduled, customer impacted.","Laptop screen flickers and blue screen of death. My Lenovo laptop screen is flickering continuously, followed by a Blue Screen (BSOD). Client call scheduled, customer impacted.",Service Portal,Hardware,High,High,High,Desktop Support,Negative,Faulty Intel HD Graphics driver causing memory dump crash.,"1. Boot laptop into Safe Mode.
+2. Uninstall current display drivers.
+3. Download and install verified Lenovo stable GPU drivers.
+4. Restart laptop.","AI Recommended Resolution:
+1. Boot laptop into Safe Mode.
+2. Uninstall current display drivers.
+3. Download and install verified Lenovo stable GPU drivers.
+4. Restart laptop.",Done,Jack Hardware,Resolved as per standard procedures. Tested and verified.,2026-05-26 07:33:33,2026-05-26 09:14:33,101.0,180,Met,0,0
+TechCorp Services,Lisa Wilson,lisa.wilson@techcorpservices.com,Ransomware alert on local fileserver,Ransomware warning! Internal file server files have extension .locked. Security breach! Complete outage of documents.,Ransomware alert on local fileserver. Ransomware warning! Internal file server files have extension .locked. Security breach! Complete outage of documents.,Service Portal,Security,Critical,Critical,Critical,Security Team,Negative,Malware execution via email attachment bypass.,"1. Isolate target file server from local area network.
+2. Terminate infected system processes.
+3. Scan active directory for lateral movement indicators.
+4. Restore documents from cold backup storage.","AI Recommended Resolution:
+1. Isolate target file server from local area network.
+2. Terminate infected system processes.
+3. Scan active directory for lateral movement indicators.
+4. Restore documents from cold backup storage.",Done,Alice Firewall,Resolved as per standard procedures. Tested and verified.,2026-05-26 09:39:33,2026-05-26 11:15:33,96.0,120,Met,0,0
+Apex Retail,Emily Gonzalez,emily.gonzalez@apexretail.com,Router configuration error in branch office,Branch office router is slow and throwing intermittent packet loss errors. Intermittent issue with routing tables.,Router configuration error in branch office. Branch office router is slow and throwing intermittent packet loss errors. Intermittent issue with routing tables.,Chat,Network,Low,Medium,Medium,Infra Team,Neutral,Corrupted BGP routing table entry on the branch router gateway.,"1. Reset branch gateway router.
+2. Clear BGP cache routing protocols.
+3. Re-sync routing metrics with the primary hub.","AI Recommended Resolution:
+1. Reset branch gateway router.
+2. Clear BGP cache routing protocols.
+3. Re-sync routing metrics with the primary hub.",Done,Robert Infra,Resolved as per standard procedures. Tested and verified.,2026-05-26 12:43:33,2026-05-26 14:45:27,121.9,480,Met,0,0
+FinBank Corp,Ashley Miller,ashley.miller@finbankcorp.com,Database corruption in SQL Server,"Database corruption detected on DB-PROD-01. Customer table reports data page corruptions, database corruption threat, severe data loss risk.","Database corruption in SQL Server. Database corruption detected on DB-PROD-01. Customer table reports data page corruptions, database corruption threat, severe data loss risk.",Service Portal,Database,Critical,Critical,Critical,Database Team,Negative,Disk hardware controller write failure corrupted SQL database data pages.,"1. Run DBCC CHECKDB command.
+2. Restore database from last clean backup differential.
+3. Re-apply transaction logs.
+4. Validate record counts.","AI Recommended Resolution:
+1. Run DBCC CHECKDB command.
+2. Restore database from last clean backup differential.
+3. Re-apply transaction logs.
+4. Validate record counts.",Done,Carl Query,Resolved as per standard procedures. Tested and verified.,2026-05-26 15:51:33,2026-05-26 16:13:27,21.9,120,Met,0,0
+CloudSphere,John Martinez,john.martinez@cloudsphere.com,Installation request for MS Visio and Project,I need MS Visio and Project installed on my local machine for project diagrams. Installation request.,Installation request for MS Visio and Project. I need MS Visio and Project installed on my local machine for project diagrams. Installation request.,Chat,Software,Low,Low,Low,Application Support,Positive,Standard software request needing automated package push.,"1. Check software license pool availability.
+2. Push Visio MSI package through SCCM deployment.
+3. Verify app launcher on target machine.","AI Recommended Resolution:
+1. Check software license pool availability.
+2. Push Visio MSI package through SCCM deployment.
+3. Verify app launcher on target machine.",Done,Anna Code,Resolved as per standard procedures. Tested and verified.,2026-05-26 18:42:33,2026-05-26 19:53:09,70.6,960,Met,0,0
+TechCorp Services,Sarah Wilson,sarah.wilson@techcorpservices.com,Complete outage in office WiFi network,"The entire second floor is experiencing a complete outage on the office WiFi network. No devices can connect, server down for local services.","Complete outage in office WiFi network. The entire second floor is experiencing a complete outage on the office WiFi network. No devices can connect, server down for local services.",Service Portal,Network,High,Critical,Critical,Infra Team,Negative,Core router stack loop due to a misconfigured VLAN switch.,"1. Log into core router switch interface.
+2. Reset switch loop protection control.
+3. Restore router default VLAN routing configuration.
+4. Restart office access points.","AI Recommended Resolution:
+1. Log into core router switch interface.
+2. Reset switch loop protection control.
+3. Restore router default VLAN routing configuration.
+4. Restart office access points.",Done,Steven Cable,Resolved as per standard procedures. Tested and verified.,2026-05-26 21:52:33,2026-05-26 23:08:09,75.6,120,Met,0,0
+InnoTech Ltd,Nancy Brown,nancy.brown@innotechltd.com,OS Issue - Windows update failed loop,My laptop is stuck in an infinite loop saying 'Undoing changes made to your computer' after a Windows Update failed. High urgency.,OS Issue - Windows update failed loop. My laptop is stuck in an infinite loop saying 'Undoing changes made to your computer' after a Windows Update failed. High urgency.,Manual,Software,High,High,High,Application Support,Negative,Corrupt system registry hive after interrupted Windows update transaction.,"1. Access WinRE recovery menu.
+2. Revert pending system updates via Command Prompt command dism.
+3. Run SFC scan.
+4. Reboot OS normally.","AI Recommended Resolution:
+1. Access WinRE recovery menu.
+2. Revert pending system updates via Command Prompt command dism.
+3. Run SFC scan.
+4. Reboot OS normally.",Done,Anna Code,Resolved as per standard procedures. Tested and verified.,2026-05-27 01:12:33,2026-05-27 01:36:51,24.3,180,Met,0,0
+EduLearn Inc,Karen Davis,karen.davis@edulearninc.com,Database corruption in SQL Server,"Database corruption detected on DB-PROD-01. Customer table reports data page corruptions, database corruption threat, severe data loss risk.","Database corruption in SQL Server. Database corruption detected on DB-PROD-01. Customer table reports data page corruptions, database corruption threat, severe data loss risk.",Email,Database,Critical,Critical,Critical,Database Team,Negative,Disk hardware controller write failure corrupted SQL database data pages.,"1. Run DBCC CHECKDB command.
+2. Restore database from last clean backup differential.
+3. Re-apply transaction logs.
+4. Validate record counts.","AI Recommended Resolution:
+1. Run DBCC CHECKDB command.
+2. Restore database from last clean backup differential.
+3. Re-apply transaction logs.
+4. Validate record counts.",Done,Nora Index,Resolved as per standard procedures. Tested and verified.,2026-05-27 04:00:33,2026-05-27 04:16:27,15.9,120,Met,0,0
+TechCorp Services,Amanda Brown,amanda.brown@techcorpservices.com,Outlook email issue - cannot send emails,Outlook is throwing an error '0x8004010F' and won't send emails. Intermittent email issue.,Outlook email issue - cannot send emails. Outlook is throwing an error '0x8004010F' and won't send emails. Intermittent email issue.,Chat,Messaging,Medium,Medium,Medium,Messaging Team,Neutral,Corrupted Outlook offline address book file (OAB).,"1. Close Outlook.
+2. Delete local .oab files from AppData cache.
+3. Re-open Outlook and force send/receive sync.","AI Recommended Resolution:
+1. Close Outlook.
+2. Delete local .oab files from AppData cache.
+3. Re-open Outlook and force send/receive sync.",Done,Mary Mail,Resolved as per standard procedures. Tested and verified.,2026-05-27 07:29:33,2026-05-27 10:37:33,188.0,480,Met,0,0
+FinBank Corp,Emily Davis,emily.davis@finbankcorp.com,Locked out of AD account - unable to login,I locked my active directory account after entering password incorrectly. Unable to login to workstation.,Locked out of AD account - unable to login. I locked my active directory account after entering password incorrectly. Unable to login to workstation.,Email,Access,Critical,High,Critical,Service Desk L1,Negative,User entered expired password multiple times causing AD lockout policy trigger.,"1. Look up user Active Directory profile.
+2. Verify identity via security verification questions.
+3. Unlock AD account.
+4. Issue temporary reset password.","AI Recommended Resolution:
+1. Look up user Active Directory profile.
+2. Verify identity via security verification questions.
+3. Unlock AD account.
+4. Issue temporary reset password.",Done,Leo Helpdesk,Resolved as per standard procedures. Tested and verified.,2026-05-27 10:07:33,2026-05-27 11:48:21,100.8,120,Met,0,0
+EduLearn Inc,Nancy Davis,nancy.davis@edulearninc.com,Installation request for MS Visio and Project,I need MS Visio and Project installed on my local machine for project diagrams. Installation request.,Installation request for MS Visio and Project. I need MS Visio and Project installed on my local machine for project diagrams. Installation request.,Chat,Software,Low,Low,Low,Application Support,Positive,Standard software request needing automated package push.,"1. Check software license pool availability.
+2. Push Visio MSI package through SCCM deployment.
+3. Verify app launcher on target machine.","AI Recommended Resolution:
+1. Check software license pool availability.
+2. Push Visio MSI package through SCCM deployment.
+3. Verify app launcher on target machine.",Done,Anna Code,Resolved as per standard procedures. Tested and verified.,2026-05-27 12:48:33,2026-05-27 15:19:09,150.6,960,Met,0,0
+MedSystems,Thomas Jones,thomas.jones@medsystems.com,VPN connection drops frequently,My corporate VPN connection keeps dropping every 5 minutes while I'm trying to work from home. Need urgent help as client call is scheduled.,VPN connection drops frequently. My corporate VPN connection keeps dropping every 5 minutes while I'm trying to work from home. Need urgent help as client call is scheduled.,Manual,Network,High,High,High,Infra Team,Negative,Outdated VPN client version causing handshake timeout with the gateway.,"1. Verify VPN credentials.
+2. Reset VPN profile.
+3. Upgrade to latest Cisco AnyConnect client.
+4. Clear cached credentials.
+5. Restart VPN client.","AI Recommended Resolution:
+1. Verify VPN credentials.
+2. Reset VPN profile.
+3. Upgrade to latest Cisco AnyConnect client.
+4. Clear cached credentials.
+5. Restart VPN client.",Done,Steven Cable,Resolved as per standard procedures. Tested and verified.,2026-05-27 16:02:33,2026-05-27 16:36:03,33.5,180,Met,0,0
+TCS Global,Sarah Lopez,sarah.lopez@tcsglobal.com,Shared folder access request,Please grant access to the shared finance folder for audit files. Account creation and permissions request.,Shared folder access request. Please grant access to the shared finance folder for audit files. Account creation and permissions request.,Service Portal,Access,Low,Low,Low,IT Access Team,Neutral,Standard role change requiring access control modification.,"1. Verify manager approval via approval chain.
+2. Add user account to security group SG-Finance-Read.
+3. Force AD replication.","AI Recommended Resolution:
+1. Verify manager approval via approval chain.
+2. Add user account to security group SG-Finance-Read.
+3. Force AD replication.",Done,Sam Permit,Resolved as per standard procedures. Tested and verified.,2026-05-27 18:51:33,2026-05-27 19:50:09,58.6,960,Met,0,0
+InnoTech Ltd,Emily Martinez,emily.martinez@innotechltd.com,Certificate expired error on internal portal,"Users are getting a security warning on internal portals. Certificate expired error, unable to login securely.","Certificate expired error on internal portal. Users are getting a security warning on internal portals. Certificate expired error, unable to login securely.",Email,Security,High,High,High,Security Team,Negative,Automation script failed to renew SSL certificate from internal Certificate Authority.,"1. Generate CSR on web server.
+2. Submit request to corporate PKI portal.
+3. Install updated SSL certificate in IIS binding.
+4. Verify HTTPS routing.","AI Recommended Resolution:
+1. Generate CSR on web server.
+2. Submit request to corporate PKI portal.
+3. Install updated SSL certificate in IIS binding.
+4. Verify HTTPS routing.",Done,Alice Firewall,Resolved as per standard procedures. Tested and verified.,2026-05-27 21:43:33,2026-05-27 22:54:57,71.4,180,Met,0,0
+TCS Global,Emily Miller,emily.miller@tcsglobal.com,Onboarding request for new engineer starting next week,"Please complete onboarding setup for the new team member, including account creation and onboarding documents.","Onboarding request for new engineer starting next week. Please complete onboarding setup for the new team member, including account creation and onboarding documents.",Service Portal,HR,Low,Low,Low,HR IT Team,Positive,Standard recruitment profile pipeline entry.,"1. Create AD login credentials.
+2. Allocate laptop and workspace peripherals.
+3. Provision Microsoft 365 license.
+4. Schedule HR welcome briefing.","AI Recommended Resolution:
+1. Create AD login credentials.
+2. Allocate laptop and workspace peripherals.
+3. Provision Microsoft 365 license.
+4. Schedule HR welcome briefing.",Done,Heidi HR,Resolved as per standard procedures. Tested and verified.,2026-05-28 00:53:33,2026-05-28 10:35:27,581.9,960,Met,0,0
+MedSystems,William Williams,william.williams@medsystems.com,Outlook email issue - cannot send emails,Outlook is throwing an error '0x8004010F' and won't send emails. Intermittent email issue.,Outlook email issue - cannot send emails. Outlook is throwing an error '0x8004010F' and won't send emails. Intermittent email issue.,Service Portal,Messaging,Medium,Medium,Medium,Messaging Team,Neutral,Corrupted Outlook offline address book file (OAB).,"1. Close Outlook.
+2. Delete local .oab files from AppData cache.
+3. Re-open Outlook and force send/receive sync.","AI Recommended Resolution:
+1. Close Outlook.
+2. Delete local .oab files from AppData cache.
+3. Re-open Outlook and force send/receive sync.",Done,Mary Mail,Resolved as per standard procedures. Tested and verified.,2026-05-28 03:53:33,2026-05-28 04:07:27,13.9,480,Met,0,0
+TechCorp Services,James Rodriguez,james.rodriguez@techcorpservices.com,Onboarding request for new engineer starting next week,"Please complete onboarding setup for the new team member, including account creation and onboarding documents.","Onboarding request for new engineer starting next week. Please complete onboarding setup for the new team member, including account creation and onboarding documents.",Service Portal,HR,Medium,Low,Medium,HR IT Team,Positive,Standard recruitment profile pipeline entry.,"1. Create AD login credentials.
+2. Allocate laptop and workspace peripherals.
+3. Provision Microsoft 365 license.
+4. Schedule HR welcome briefing.","AI Recommended Resolution:
+1. Create AD login credentials.
+2. Allocate laptop and workspace peripherals.
+3. Provision Microsoft 365 license.
+4. Schedule HR welcome briefing.",Done,Heidi HR,Resolved as per standard procedures. Tested and verified.,2026-05-28 06:44:33,2026-05-28 13:05:39,381.1,480,Met,0,0
+InnoTech Ltd,Thomas Wilson,thomas.wilson@innotechltd.com,Production payment failure in checkout portal,"The online payment failure is occurring. Production down, customers cannot complete purchases. Complete outage on payment gateway.","Production payment failure in checkout portal. The online payment failure is occurring. Production down, customers cannot complete purchases. Complete outage on payment gateway.",Service Portal,Application,Critical,Critical,Critical,Application Support,Negative,SSL certificate handshake error with payment processor due to obsolete TLS protocol version.,"1. Review application exception logs.
+2. Enable TLS 1.3 in payment module configuration.
+3. Deploy hotfix to prod cluster.
+4. Perform transaction test.","AI Recommended Resolution:
+1. Review application exception logs.
+2. Enable TLS 1.3 in payment module configuration.
+3. Deploy hotfix to prod cluster.
+4. Perform transaction test.",Done,Anna Code,Resolved as per standard procedures. Tested and verified.,2026-05-28 09:56:33,2026-05-28 11:12:03,75.5,120,Met,0,0
+TechCorp Services,David Jones,david.jones@techcorpservices.com,Phishing email detected targeting team inbox,We received an email looking like it's from executive leadership asking for urgent bank info. Possible phishing attempt.,Phishing email detected targeting team inbox. We received an email looking like it's from executive leadership asking for urgent bank info. Possible phishing attempt.,Email,Security,Critical,Critical,Critical,Security Team,Negative,Spoofed email domain bypassing DMARC policies.,"1. Analyze email header headers.
+2. Block sender domain at Exchange Gateway.
+3. Delete phishing emails from user mailboxes.
+4. Update SPF/DKIM policy records.","AI Recommended Resolution:
+1. Analyze email header headers.
+2. Block sender domain at Exchange Gateway.
+3. Delete phishing emails from user mailboxes.
+4. Update SPF/DKIM policy records.",Done,Alice Firewall,Resolved as per standard procedures. Tested and verified.,2026-05-28 12:57:33,2026-05-28 13:34:15,36.7,120,Met,0,0
+CloudSphere,James Hernandez,james.hernandez@cloudsphere.com,OS Issue - Windows update failed loop,My laptop is stuck in an infinite loop saying 'Undoing changes made to your computer' after a Windows Update failed. High urgency.,OS Issue - Windows update failed loop. My laptop is stuck in an infinite loop saying 'Undoing changes made to your computer' after a Windows Update failed. High urgency.,Service Portal,Software,High,High,High,Application Support,Negative,Corrupt system registry hive after interrupted Windows update transaction.,"1. Access WinRE recovery menu.
+2. Revert pending system updates via Command Prompt command dism.
+3. Run SFC scan.
+4. Reboot OS normally.","AI Recommended Resolution:
+1. Access WinRE recovery menu.
+2. Revert pending system updates via Command Prompt command dism.
+3. Run SFC scan.
+4. Reboot OS normally.",Done,Dave Debugger,Resolved as per standard procedures. Tested and verified.,2026-05-28 16:23:33,2026-05-28 18:51:09,147.6,180,Met,0,0
+EduLearn Inc,Robert Smith,robert.smith@edulearninc.com,Complete outage in office WiFi network,"The entire second floor is experiencing a complete outage on the office WiFi network. No devices can connect, server down for local services.","Complete outage in office WiFi network. The entire second floor is experiencing a complete outage on the office WiFi network. No devices can connect, server down for local services.",Email,Network,Critical,Critical,Critical,Infra Team,Negative,Core router stack loop due to a misconfigured VLAN switch.,"1. Log into core router switch interface.
+2. Reset switch loop protection control.
+3. Restore router default VLAN routing configuration.
+4. Restart office access points.","AI Recommended Resolution:
+1. Log into core router switch interface.
+2. Reset switch loop protection control.
+3. Restore router default VLAN routing configuration.
+4. Restart office access points.",Done,Robert Infra,Resolved as per standard procedures. Tested and verified.,2026-05-28 18:43:33,2026-05-28 19:55:57,72.4,120,Met,0,0
+Apex Retail,Karen Rodriguez,karen.rodriguez@apexretail.com,Locked out of AD account - unable to login,I locked my active directory account after entering password incorrectly. Unable to login to workstation.,Locked out of AD account - unable to login. I locked my active directory account after entering password incorrectly. Unable to login to workstation.,Email,Access,High,High,High,Service Desk L1,Negative,User entered expired password multiple times causing AD lockout policy trigger.,"1. Look up user Active Directory profile.
+2. Verify identity via security verification questions.
+3. Unlock AD account.
+4. Issue temporary reset password.","AI Recommended Resolution:
+1. Look up user Active Directory profile.
+2. Verify identity via security verification questions.
+3. Unlock AD account.
+4. Issue temporary reset password.",Done,Leo Helpdesk,Resolved as per standard procedures. Tested and verified.,2026-05-28 21:48:33,2026-05-29 00:05:27,136.9,180,Met,0,0
+InnoTech Ltd,Karen Williams,karen.williams@innotechltd.com,Onboarding request for new engineer starting next week,"Please complete onboarding setup for the new team member, including account creation and onboarding documents.","Onboarding request for new engineer starting next week. Please complete onboarding setup for the new team member, including account creation and onboarding documents.",Email,HR,Low,Low,Low,HR IT Team,Positive,Standard recruitment profile pipeline entry.,"1. Create AD login credentials.
+2. Allocate laptop and workspace peripherals.
+3. Provision Microsoft 365 license.
+4. Schedule HR welcome briefing.","AI Recommended Resolution:
+1. Create AD login credentials.
+2. Allocate laptop and workspace peripherals.
+3. Provision Microsoft 365 license.
+4. Schedule HR welcome briefing.",Done,Heidi HR,Resolved as per standard procedures. Tested and verified.,2026-05-29 01:13:33,2026-05-29 14:11:15,777.7,960,Met,0,0
+FinBank Corp,Michael Garcia,michael.garcia@finbankcorp.com,OS Issue - Windows update failed loop,My laptop is stuck in an infinite loop saying 'Undoing changes made to your computer' after a Windows Update failed. High urgency.,OS Issue - Windows update failed loop. My laptop is stuck in an infinite loop saying 'Undoing changes made to your computer' after a Windows Update failed. High urgency.,Manual,Software,High,High,High,Application Support,Negative,Corrupt system registry hive after interrupted Windows update transaction.,"1. Access WinRE recovery menu.
+2. Revert pending system updates via Command Prompt command dism.
+3. Run SFC scan.
+4. Reboot OS normally.","AI Recommended Resolution:
+1. Access WinRE recovery menu.
+2. Revert pending system updates via Command Prompt command dism.
+3. Run SFC scan.
+4. Reboot OS normally.",Done,Anna Code,Resolved as per standard procedures. Tested and verified.,2026-05-29 04:21:33,2026-05-29 06:52:15,150.7,180,Met,0,0
+InnoTech Ltd,Jessica Miller,jessica.miller@innotechltd.com,Installation request for MS Visio and Project,I need MS Visio and Project installed on my local machine for project diagrams. Installation request.,Installation request for MS Visio and Project. I need MS Visio and Project installed on my local machine for project diagrams. Installation request.,Email,Software,Low,Low,Low,Application Support,Positive,Standard software request needing automated package push.,"1. Check software license pool availability.
+2. Push Visio MSI package through SCCM deployment.
+3. Verify app launcher on target machine.","AI Recommended Resolution:
+1. Check software license pool availability.
+2. Push Visio MSI package through SCCM deployment.
+3. Verify app launcher on target machine.",Done,Dave Debugger,Resolved as per standard procedures. Tested and verified.,2026-05-29 07:33:33,2026-05-29 18:51:45,678.2,960,Met,0,0
+FinBank Corp,Robert Williams,robert.williams@finbankcorp.com,Database corruption in SQL Server,"Database corruption detected on DB-PROD-01. Customer table reports data page corruptions, database corruption threat, severe data loss risk.","Database corruption in SQL Server. Database corruption detected on DB-PROD-01. Customer table reports data page corruptions, database corruption threat, severe data loss risk.",Email,Database,Critical,Critical,Critical,Database Team,Negative,Disk hardware controller write failure corrupted SQL database data pages.,"1. Run DBCC CHECKDB command.
+2. Restore database from last clean backup differential.
+3. Re-apply transaction logs.
+4. Validate record counts.","AI Recommended Resolution:
+1. Run DBCC CHECKDB command.
+2. Restore database from last clean backup differential.
+3. Re-apply transaction logs.
+4. Validate record counts.",Done,Nora Index,Resolved as per standard procedures. Tested and verified.,2026-05-29 10:29:33,2026-05-29 12:03:39,94.1,120,Met,0,0
+Apex Retail,Lisa Jones,lisa.jones@apexretail.com,Installation request for MS Visio and Project,I need MS Visio and Project installed on my local machine for project diagrams. Installation request.,Installation request for MS Visio and Project. I need MS Visio and Project installed on my local machine for project diagrams. Installation request.,Chat,Software,Low,Low,Low,Application Support,Positive,Standard software request needing automated package push.,"1. Check software license pool availability.
+2. Push Visio MSI package through SCCM deployment.
+3. Verify app launcher on target machine.","AI Recommended Resolution:
+1. Check software license pool availability.
+2. Push Visio MSI package through SCCM deployment.
+3. Verify app launcher on target machine.",Done,Anna Code,Resolved as per standard procedures. Tested and verified.,2026-05-29 12:50:33,2026-05-29 18:40:51,350.3,960,Met,0,0
+TechCorp Services,Robert Garcia,robert.garcia@techcorpservices.com,Locked out of AD account - unable to login,I locked my active directory account after entering password incorrectly. Unable to login to workstation.,Locked out of AD account - unable to login. I locked my active directory account after entering password incorrectly. Unable to login to workstation.,Manual,Access,High,High,High,Service Desk L1,Negative,User entered expired password multiple times causing AD lockout policy trigger.,"1. Look up user Active Directory profile.
+2. Verify identity via security verification questions.
+3. Unlock AD account.
+4. Issue temporary reset password.","AI Recommended Resolution:
+1. Look up user Active Directory profile.
+2. Verify identity via security verification questions.
+3. Unlock AD account.
+4. Issue temporary reset password.",Done,Sally Support,Resolved as per standard procedures. Tested and verified.,2026-05-29 16:33:33,2026-05-29 19:06:21,152.8,180,Met,0,0
+MedSystems,Jessica Martinez,jessica.martinez@medsystems.com,Laptop screen flickers and blue screen of death,"My Lenovo laptop screen is flickering continuously, followed by a Blue Screen (BSOD). Client call scheduled, customer impacted.","Laptop screen flickers and blue screen of death. My Lenovo laptop screen is flickering continuously, followed by a Blue Screen (BSOD). Client call scheduled, customer impacted.",Service Portal,Hardware,Low,High,High,Desktop Support,Negative,Faulty Intel HD Graphics driver causing memory dump crash.,"1. Boot laptop into Safe Mode.
+2. Uninstall current display drivers.
+3. Download and install verified Lenovo stable GPU drivers.
+4. Restart laptop.","AI Recommended Resolution:
+1. Boot laptop into Safe Mode.
+2. Uninstall current display drivers.
+3. Download and install verified Lenovo stable GPU drivers.
+4. Restart laptop.",Done,Peter Screws,Resolved as per standard procedures. Tested and verified.,2026-05-29 19:34:33,2026-05-29 21:35:15,120.7,180,Met,0,0
+TechCorp Services,William Martinez,william.martinez@techcorpservices.com,Outlook email issue - cannot send emails,Outlook is throwing an error '0x8004010F' and won't send emails. Intermittent email issue.,Outlook email issue - cannot send emails. Outlook is throwing an error '0x8004010F' and won't send emails. Intermittent email issue.,Chat,Messaging,Medium,Medium,Medium,Messaging Team,Neutral,Corrupted Outlook offline address book file (OAB).,"1. Close Outlook.
+2. Delete local .oab files from AppData cache.
+3. Re-open Outlook and force send/receive sync.","AI Recommended Resolution:
+1. Close Outlook.
+2. Delete local .oab files from AppData cache.
+3. Re-open Outlook and force send/receive sync.",Done,Gary Outlook,Resolved as per standard procedures. Tested and verified.,2026-05-29 22:05:33,2026-05-29 22:16:15,10.7,480,Met,0,0
+FinBank Corp,Lisa Miller,lisa.miller@finbankcorp.com,Phishing email detected targeting team inbox,We received an email looking like it's from executive leadership asking for urgent bank info. Possible phishing attempt.,Phishing email detected targeting team inbox. We received an email looking like it's from executive leadership asking for urgent bank info. Possible phishing attempt.,Email,Security,Critical,Critical,Critical,Security Team,Negative,Spoofed email domain bypassing DMARC policies.,"1. Analyze email header headers.
+2. Block sender domain at Exchange Gateway.
+3. Delete phishing emails from user mailboxes.
+4. Update SPF/DKIM policy records.","AI Recommended Resolution:
+1. Analyze email header headers.
+2. Block sender domain at Exchange Gateway.
+3. Delete phishing emails from user mailboxes.
+4. Update SPF/DKIM policy records.",Done,Bob Secure,Resolved as per standard procedures. Tested and verified.,2026-05-30 01:21:33,2026-05-30 02:32:39,71.1,120,Met,0,0
+MedSystems,Ashley Hernandez,ashley.hernandez@medsystems.com,Laptop screen flickers and blue screen of death,"My Lenovo laptop screen is flickering continuously, followed by a Blue Screen (BSOD). Client call scheduled, customer impacted.","Laptop screen flickers and blue screen of death. My Lenovo laptop screen is flickering continuously, followed by a Blue Screen (BSOD). Client call scheduled, customer impacted.",Manual,Hardware,High,High,High,Desktop Support,Negative,Faulty Intel HD Graphics driver causing memory dump crash.,"1. Boot laptop into Safe Mode.
+2. Uninstall current display drivers.
+3. Download and install verified Lenovo stable GPU drivers.
+4. Restart laptop.","AI Recommended Resolution:
+1. Boot laptop into Safe Mode.
+2. Uninstall current display drivers.
+3. Download and install verified Lenovo stable GPU drivers.
+4. Restart laptop.",Done,Peter Screws,Resolved as per standard procedures. Tested and verified.,2026-05-30 04:24:33,2026-05-30 05:58:51,94.3,180,Met,0,0
+EduLearn Inc,Jessica Martinez,jessica.martinez@edulearninc.com,OS Issue - Windows update failed loop,My laptop is stuck in an infinite loop saying 'Undoing changes made to your computer' after a Windows Update failed. High urgency.,OS Issue - Windows update failed loop. My laptop is stuck in an infinite loop saying 'Undoing changes made to your computer' after a Windows Update failed. High urgency.,Service Portal,Software,High,High,High,Application Support,Negative,Corrupt system registry hive after interrupted Windows update transaction.,"1. Access WinRE recovery menu.
+2. Revert pending system updates via Command Prompt command dism.
+3. Run SFC scan.
+4. Reboot OS normally.","AI Recommended Resolution:
+1. Access WinRE recovery menu.
+2. Revert pending system updates via Command Prompt command dism.
+3. Run SFC scan.
+4. Reboot OS normally.",Done,Anna Code,Resolved as per standard procedures. Tested and verified.,2026-05-30 07:04:33,2026-05-30 08:00:45,56.2,180,Met,0,0
+CloudSphere,Thomas Davis,thomas.davis@cloudsphere.com,OS Issue - Windows update failed loop,My laptop is stuck in an infinite loop saying 'Undoing changes made to your computer' after a Windows Update failed. High urgency.,OS Issue - Windows update failed loop. My laptop is stuck in an infinite loop saying 'Undoing changes made to your computer' after a Windows Update failed. High urgency.,Manual,Software,High,High,High,Application Support,Negative,Corrupt system registry hive after interrupted Windows update transaction.,"1. Access WinRE recovery menu.
+2. Revert pending system updates via Command Prompt command dism.
+3. Run SFC scan.
+4. Reboot OS normally.","AI Recommended Resolution:
+1. Access WinRE recovery menu.
+2. Revert pending system updates via Command Prompt command dism.
+3. Run SFC scan.
+4. Reboot OS normally.",Done,Dave Debugger,Resolved as per standard procedures. Tested and verified.,2026-05-30 10:05:33,2026-05-30 12:16:09,130.6,180,Met,0,0
+TechCorp Services,Ashley Rodriguez,ashley.rodriguez@techcorpservices.com,Request for a new wireless keyboard and desktop mouse,My keyboard has some keys that do not work. Submitting an information request for a replacement keyboard.,Request for a new wireless keyboard and desktop mouse. My keyboard has some keys that do not work. Submitting an information request for a replacement keyboard.,Service Portal,Hardware,High,Low,High,Desktop Support,Positive,Physical wear and tear of keyboard membrane.,"1. Assign replacement keyboard from desktop support inventory.
+2. Update hardware serial number in asset tracker.","AI Recommended Resolution:
+1. Assign replacement keyboard from desktop support inventory.
+2. Update hardware serial number in asset tracker.",Done,Peter Screws,Resolved as per standard procedures. Tested and verified.,2026-05-30 13:20:33,2026-05-30 14:04:39,44.1,180,Met,0,0
+TCS Global,Sarah Brown,sarah.brown@tcsglobal.com,OS Issue - Windows update failed loop,My laptop is stuck in an infinite loop saying 'Undoing changes made to your computer' after a Windows Update failed. High urgency.,OS Issue - Windows update failed loop. My laptop is stuck in an infinite loop saying 'Undoing changes made to your computer' after a Windows Update failed. High urgency.,Manual,Software,High,High,High,Application Support,Negative,Corrupt system registry hive after interrupted Windows update transaction.,"1. Access WinRE recovery menu.
+2. Revert pending system updates via Command Prompt command dism.
+3. Run SFC scan.
+4. Reboot OS normally.","AI Recommended Resolution:
+1. Access WinRE recovery menu.
+2. Revert pending system updates via Command Prompt command dism.
+3. Run SFC scan.
+4. Reboot OS normally.",Done,Anna Code,Resolved as per standard procedures. Tested and verified.,2026-05-30 15:47:33,2026-05-30 17:06:45,79.2,180,Met,0,0
+EduLearn Inc,Nancy Miller,nancy.miller@edulearninc.com,Onboarding request for new engineer starting next week,"Please complete onboarding setup for the new team member, including account creation and onboarding documents.","Onboarding request for new engineer starting next week. Please complete onboarding setup for the new team member, including account creation and onboarding documents.",Chat,HR,Critical,Low,Critical,HR IT Team,Positive,Standard recruitment profile pipeline entry.,"1. Create AD login credentials.
+2. Allocate laptop and workspace peripherals.
+3. Provision Microsoft 365 license.
+4. Schedule HR welcome briefing.","AI Recommended Resolution:
+1. Create AD login credentials.
+2. Allocate laptop and workspace peripherals.
+3. Provision Microsoft 365 license.
+4. Schedule HR welcome briefing.",Done,Heidi HR,Resolved as per standard procedures. Tested and verified.,2026-05-30 18:50:33,2026-05-30 20:16:51,86.3,120,Met,0,0
+Apex Retail,Sarah Rodriguez,sarah.rodriguez@apexretail.com,Installation request for MS Visio and Project,I need MS Visio and Project installed on my local machine for project diagrams. Installation request.,Installation request for MS Visio and Project. I need MS Visio and Project installed on my local machine for project diagrams. Installation request.,Chat,Software,Low,Low,Low,Application Support,Positive,Standard software request needing automated package push.,"1. Check software license pool availability.
+2. Push Visio MSI package through SCCM deployment.
+3. Verify app launcher on target machine.","AI Recommended Resolution:
+1. Check software license pool availability.
+2. Push Visio MSI package through SCCM deployment.
+3. Verify app launcher on target machine.",Done,Anna Code,Resolved as per standard procedures. Tested and verified.,2026-05-30 21:49:33,2026-05-31 04:29:21,399.8,960,Met,0,0
+CloudSphere,Thomas Martinez,thomas.martinez@cloudsphere.com,Database issue - query locking causing timeouts,"Database issue. Long running lock blocks multiple critical queries on application database, causing slow response times.","Database issue - query locking causing timeouts. Database issue. Long running lock blocks multiple critical queries on application database, causing slow response times.",Manual,Database,Medium,Medium,Medium,Database Team,Neutral,Unindexed foreign keys causing table scans and deadlock loops.,"1. Run sp_who2 to identify blocking SPID.
+2. Terminate blocker process safely.
+3. Add missing query index.
+4. Refactor transaction isolation level.","AI Recommended Resolution:
+1. Run sp_who2 to identify blocking SPID.
+2. Terminate blocker process safely.
+3. Add missing query index.
+4. Refactor transaction isolation level.",Done,Carl Query,Resolved as per standard procedures. Tested and verified.,2026-05-31 01:20:33,2026-05-31 07:49:09,388.6,480,Met,0,0
+MedSystems,Amanda Wilson,amanda.wilson@medsystems.com,Ransomware alert on local fileserver,Ransomware warning! Internal file server files have extension .locked. Security breach! Complete outage of documents.,Ransomware alert on local fileserver. Ransomware warning! Internal file server files have extension .locked. Security breach! Complete outage of documents.,Service Portal,Security,Critical,Critical,Critical,Security Team,Negative,Malware execution via email attachment bypass.,"1. Isolate target file server from local area network.
+2. Terminate infected system processes.
+3. Scan active directory for lateral movement indicators.
+4. Restore documents from cold backup storage.","AI Recommended Resolution:
+1. Isolate target file server from local area network.
+2. Terminate infected system processes.
+3. Scan active directory for lateral movement indicators.
+4. Restore documents from cold backup storage.",Done,Bob Secure,Resolved as per standard procedures. Tested and verified.,2026-05-31 04:06:33,2026-05-31 05:17:57,71.4,120,Met,0,0
+TechCorp Services,Ashley Brown,ashley.brown@techcorpservices.com,Locked out of AD account - unable to login,I locked my active directory account after entering password incorrectly. Unable to login to workstation.,Locked out of AD account - unable to login. I locked my active directory account after entering password incorrectly. Unable to login to workstation.,Service Portal,Access,High,High,High,Service Desk L1,Negative,User entered expired password multiple times causing AD lockout policy trigger.,"1. Look up user Active Directory profile.
+2. Verify identity via security verification questions.
+3. Unlock AD account.
+4. Issue temporary reset password.","AI Recommended Resolution:
+1. Look up user Active Directory profile.
+2. Verify identity via security verification questions.
+3. Unlock AD account.
+4. Issue temporary reset password.",Done,Leo Helpdesk,Resolved as per standard procedures. Tested and verified.,2026-05-31 07:06:33,2026-05-31 07:37:33,31.0,180,Met,0,0
+InnoTech Ltd,James Johnson,james.johnson@innotechltd.com,Installation request for MS Visio and Project,I need MS Visio and Project installed on my local machine for project diagrams. Installation request.,Installation request for MS Visio and Project. I need MS Visio and Project installed on my local machine for project diagrams. Installation request.,Manual,Software,Low,Low,Low,Application Support,Positive,Standard software request needing automated package push.,"1. Check software license pool availability.
+2. Push Visio MSI package through SCCM deployment.
+3. Verify app launcher on target machine.","AI Recommended Resolution:
+1. Check software license pool availability.
+2. Push Visio MSI package through SCCM deployment.
+3. Verify app launcher on target machine.",Done,Dave Debugger,Resolved as per standard procedures. Tested and verified.,2026-05-31 10:02:33,2026-05-31 16:07:39,365.1,960,Met,0,0
+EduLearn Inc,William Gonzalez,william.gonzalez@edulearninc.com,OS Issue - Windows update failed loop,My laptop is stuck in an infinite loop saying 'Undoing changes made to your computer' after a Windows Update failed. High urgency.,OS Issue - Windows update failed loop. My laptop is stuck in an infinite loop saying 'Undoing changes made to your computer' after a Windows Update failed. High urgency.,Email,Software,High,High,High,Application Support,Negative,Corrupt system registry hive after interrupted Windows update transaction.,"1. Access WinRE recovery menu.
+2. Revert pending system updates via Command Prompt command dism.
+3. Run SFC scan.
+4. Reboot OS normally.","AI Recommended Resolution:
+1. Access WinRE recovery menu.
+2. Revert pending system updates via Command Prompt command dism.
+3. Run SFC scan.
+4. Reboot OS normally.",Done,Dave Debugger,Resolved as per standard procedures. Tested and verified.,2026-05-31 13:31:33,2026-05-31 14:54:03,82.5,180,Met,0,0
+EduLearn Inc,Karen Rodriguez,karen.rodriguez@edulearninc.com,Production payment failure in checkout portal,"The online payment failure is occurring. Production down, customers cannot complete purchases. Complete outage on payment gateway.","Production payment failure in checkout portal. The online payment failure is occurring. Production down, customers cannot complete purchases. Complete outage on payment gateway.",Chat,Application,Critical,Critical,Critical,Application Support,Negative,SSL certificate handshake error with payment processor due to obsolete TLS protocol version.,"1. Review application exception logs.
+2. Enable TLS 1.3 in payment module configuration.
+3. Deploy hotfix to prod cluster.
+4. Perform transaction test.","AI Recommended Resolution:
+1. Review application exception logs.
+2. Enable TLS 1.3 in payment module configuration.
+3. Deploy hotfix to prod cluster.
+4. Perform transaction test.",Done,Dave Debugger,Resolved as per standard procedures. Tested and verified.,2026-05-31 15:57:33,2026-05-31 16:50:15,52.7,120,Met,0,0
+CloudSphere,William Lopez,william.lopez@cloudsphere.com,VPN connection drops frequently,My corporate VPN connection keeps dropping every 5 minutes while I'm trying to work from home. Need urgent help as client call is scheduled.,VPN connection drops frequently. My corporate VPN connection keeps dropping every 5 minutes while I'm trying to work from home. Need urgent help as client call is scheduled.,Chat,Network,High,High,High,Infra Team,Negative,Outdated VPN client version causing handshake timeout with the gateway.,"1. Verify VPN credentials.
+2. Reset VPN profile.
+3. Upgrade to latest Cisco AnyConnect client.
+4. Clear cached credentials.
+5. Restart VPN client.","AI Recommended Resolution:
+1. Verify VPN credentials.
+2. Reset VPN profile.
+3. Upgrade to latest Cisco AnyConnect client.
+4. Clear cached credentials.
+5. Restart VPN client.",Done,Robert Infra,Resolved as per standard procedures. Tested and verified.,2026-05-31 19:02:33,2026-05-31 21:41:39,159.1,180,Met,0,0
+EduLearn Inc,John Johnson,john.johnson@edulearninc.com,Phishing email detected targeting team inbox,We received an email looking like it's from executive leadership asking for urgent bank info. Possible phishing attempt.,Phishing email detected targeting team inbox. We received an email looking like it's from executive leadership asking for urgent bank info. Possible phishing attempt.,Manual,Security,Low,Critical,Critical,Security Team,Negative,Spoofed email domain bypassing DMARC policies.,"1. Analyze email header headers.
+2. Block sender domain at Exchange Gateway.
+3. Delete phishing emails from user mailboxes.
+4. Update SPF/DKIM policy records.","AI Recommended Resolution:
+1. Analyze email header headers.
+2. Block sender domain at Exchange Gateway.
+3. Delete phishing emails from user mailboxes.
+4. Update SPF/DKIM policy records.",Done,Alice Firewall,Resolved as per standard procedures. Tested and verified.,2026-05-31 21:39:33,2026-05-31 21:54:27,14.9,120,Met,0,0
+FinBank Corp,Thomas Garcia,thomas.garcia@finbankcorp.com,Application error - slow reports query,The inventory system reports dashboard is very slow and times out frequently. Report issue.,Application error - slow reports query. The inventory system reports dashboard is very slow and times out frequently. Report issue.,Service Portal,Application,Medium,Medium,Medium,Application Support,Neutral,Missing index on transaction_date column in reporting database.,"1. Analyze report query execution plan.
+2. Identify missing query indices.
+3. Implement index optimization.
+4. Verify dashboard rendering speed.","AI Recommended Resolution:
+1. Analyze report query execution plan.
+2. Identify missing query indices.
+3. Implement index optimization.
+4. Verify dashboard rendering speed.",Done,Dave Debugger,Resolved as per standard procedures. Tested and verified.,2026-06-01 00:58:33,2026-06-01 03:05:57,127.4,480,Met,0,0
+TechCorp Services,Nancy Smith,nancy.smith@techcorpservices.com,Database corruption in SQL Server,"Database corruption detected on DB-PROD-01. Customer table reports data page corruptions, database corruption threat, severe data loss risk.","Database corruption in SQL Server. Database corruption detected on DB-PROD-01. Customer table reports data page corruptions, database corruption threat, severe data loss risk.",Email,Database,Critical,Critical,Critical,Database Team,Negative,Disk hardware controller write failure corrupted SQL database data pages.,"1. Run DBCC CHECKDB command.
+2. Restore database from last clean backup differential.
+3. Re-apply transaction logs.
+4. Validate record counts.","AI Recommended Resolution:
+1. Run DBCC CHECKDB command.
+2. Restore database from last clean backup differential.
+3. Re-apply transaction logs.
+4. Validate record counts.",Done,Carl Query,Resolved as per standard procedures. Tested and verified.,2026-06-01 03:54:33,2026-06-01 04:26:33,32.0,120,Met,0,0
+TCS Global,John Brown,john.brown@tcsglobal.com,Router configuration error in branch office,Branch office router is slow and throwing intermittent packet loss errors. Intermittent issue with routing tables.,Router configuration error in branch office. Branch office router is slow and throwing intermittent packet loss errors. Intermittent issue with routing tables.,Chat,Network,Medium,Medium,Medium,Infra Team,Neutral,Corrupted BGP routing table entry on the branch router gateway.,"1. Reset branch gateway router.
+2. Clear BGP cache routing protocols.
+3. Re-sync routing metrics with the primary hub.","AI Recommended Resolution:
+1. Reset branch gateway router.
+2. Clear BGP cache routing protocols.
+3. Re-sync routing metrics with the primary hub.",Done,Robert Infra,Resolved as per standard procedures. Tested and verified.,2026-06-01 07:27:33,2026-06-01 09:18:15,110.7,480,Met,0,0
+TechCorp Services,James Davis,james.davis@techcorpservices.com,Ransomware alert on local fileserver,Ransomware warning! Internal file server files have extension .locked. Security breach! Complete outage of documents.,Ransomware alert on local fileserver. Ransomware warning! Internal file server files have extension .locked. Security breach! Complete outage of documents.,Service Portal,Security,Critical,Critical,Critical,Security Team,Negative,Malware execution via email attachment bypass.,"1. Isolate target file server from local area network.
+2. Terminate infected system processes.
+3. Scan active directory for lateral movement indicators.
+4. Restore documents from cold backup storage.","AI Recommended Resolution:
+1. Isolate target file server from local area network.
+2. Terminate infected system processes.
+3. Scan active directory for lateral movement indicators.
+4. Restore documents from cold backup storage.",Done,Alice Firewall,Resolved as per standard procedures. Tested and verified.,2026-06-01 10:20:33,2026-06-01 11:29:57,69.4,120,Met,0,0
+InnoTech Ltd,Ashley Johnson,ashley.johnson@innotechltd.com,Laptop screen flickers and blue screen of death,"My Lenovo laptop screen is flickering continuously, followed by a Blue Screen (BSOD). Client call scheduled, customer impacted.","Laptop screen flickers and blue screen of death. My Lenovo laptop screen is flickering continuously, followed by a Blue Screen (BSOD). Client call scheduled, customer impacted.",Email,Hardware,High,High,High,Desktop Support,Negative,Faulty Intel HD Graphics driver causing memory dump crash.,"1. Boot laptop into Safe Mode.
+2. Uninstall current display drivers.
+3. Download and install verified Lenovo stable GPU drivers.
+4. Restart laptop.","AI Recommended Resolution:
+1. Boot laptop into Safe Mode.
+2. Uninstall current display drivers.
+3. Download and install verified Lenovo stable GPU drivers.
+4. Restart laptop.",Done,Peter Screws,Resolved as per standard procedures. Tested and verified.,2026-06-01 13:27:33,2026-06-01 14:37:51,70.3,180,Met,0,0
+FinBank Corp,Michael Lopez,michael.lopez@finbankcorp.com,OS Issue - Windows update failed loop,My laptop is stuck in an infinite loop saying 'Undoing changes made to your computer' after a Windows Update failed. High urgency.,OS Issue - Windows update failed loop. My laptop is stuck in an infinite loop saying 'Undoing changes made to your computer' after a Windows Update failed. High urgency.,Service Portal,Software,High,High,High,Application Support,Negative,Corrupt system registry hive after interrupted Windows update transaction.,"1. Access WinRE recovery menu.
+2. Revert pending system updates via Command Prompt command dism.
+3. Run SFC scan.
+4. Reboot OS normally.","AI Recommended Resolution:
+1. Access WinRE recovery menu.
+2. Revert pending system updates via Command Prompt command dism.
+3. Run SFC scan.
+4. Reboot OS normally.",Done,Anna Code,Resolved as per standard procedures. Tested and verified.,2026-06-01 15:42:33,2026-06-01 17:53:33,131.0,180,Met,0,0
+TCS Global,Lisa Rodriguez,lisa.rodriguez@tcsglobal.com,Onboarding request for new engineer starting next week,"Please complete onboarding setup for the new team member, including account creation and onboarding documents.","Onboarding request for new engineer starting next week. Please complete onboarding setup for the new team member, including account creation and onboarding documents.",Manual,HR,Low,Low,Low,HR IT Team,Positive,Standard recruitment profile pipeline entry.,"1. Create AD login credentials.
+2. Allocate laptop and workspace peripherals.
+3. Provision Microsoft 365 license.
+4. Schedule HR welcome briefing.","AI Recommended Resolution:
+1. Create AD login credentials.
+2. Allocate laptop and workspace peripherals.
+3. Provision Microsoft 365 license.
+4. Schedule HR welcome briefing.",Done,Heidi HR,Resolved as per standard procedures. Tested and verified.,2026-06-01 19:28:33,2026-06-02 02:50:39,442.1,960,Met,0,0
+EduLearn Inc,Nancy Johnson,nancy.johnson@edulearninc.com,Outlook email issue - cannot send emails,Outlook is throwing an error '0x8004010F' and won't send emails. Intermittent email issue.,Outlook email issue - cannot send emails. Outlook is throwing an error '0x8004010F' and won't send emails. Intermittent email issue.,Manual,Messaging,Medium,Medium,Medium,Messaging Team,Neutral,Corrupted Outlook offline address book file (OAB).,"1. Close Outlook.
+2. Delete local .oab files from AppData cache.
+3. Re-open Outlook and force send/receive sync.","AI Recommended Resolution:
+1. Close Outlook.
+2. Delete local .oab files from AppData cache.
+3. Re-open Outlook and force send/receive sync.",Done,Gary Outlook,Resolved as per standard procedures. Tested and verified.,2026-06-01 21:38:33,2026-06-02 02:47:03,308.5,480,Met,0,0
+MedSystems,Nancy Davis,nancy.davis@medsystems.com,Database corruption in SQL Server,"Database corruption detected on DB-PROD-01. Customer table reports data page corruptions, database corruption threat, severe data loss risk.","Database corruption in SQL Server. Database corruption detected on DB-PROD-01. Customer table reports data page corruptions, database corruption threat, severe data loss risk.",Manual,Database,Critical,Critical,Critical,Database Team,Negative,Disk hardware controller write failure corrupted SQL database data pages.,"1. Run DBCC CHECKDB command.
+2. Restore database from last clean backup differential.
+3. Re-apply transaction logs.
+4. Validate record counts.","AI Recommended Resolution:
+1. Run DBCC CHECKDB command.
+2. Restore database from last clean backup differential.
+3. Re-apply transaction logs.
+4. Validate record counts.",Done,Carl Query,Resolved as per standard procedures. Tested and verified.,2026-06-02 00:49:33,2026-06-02 01:31:09,41.6,120,Met,0,0
+TechCorp Services,Robert Davis,robert.davis@techcorpservices.com,Installation request for MS Visio and Project,I need MS Visio and Project installed on my local machine for project diagrams. Installation request.,Installation request for MS Visio and Project. I need MS Visio and Project installed on my local machine for project diagrams. Installation request.,Chat,Software,Low,Low,Low,Application Support,Positive,Standard software request needing automated package push.,"1. Check software license pool availability.
+2. Push Visio MSI package through SCCM deployment.
+3. Verify app launcher on target machine.","AI Recommended Resolution:
+1. Check software license pool availability.
+2. Push Visio MSI package through SCCM deployment.
+3. Verify app launcher on target machine.",Done,Dave Debugger,Resolved as per standard procedures. Tested and verified.,2026-06-02 04:31:33,2026-06-02 09:28:51,297.3,960,Met,0,0
+CloudSphere,Jessica Davis,jessica.davis@cloudsphere.com,Ransomware alert on local fileserver,Ransomware warning! Internal file server files have extension .locked. Security breach! Complete outage of documents.,Ransomware alert on local fileserver. Ransomware warning! Internal file server files have extension .locked. Security breach! Complete outage of documents.,Chat,Security,Critical,Critical,Critical,Security Team,Negative,Malware execution via email attachment bypass.,"1. Isolate target file server from local area network.
+2. Terminate infected system processes.
+3. Scan active directory for lateral movement indicators.
+4. Restore documents from cold backup storage.","AI Recommended Resolution:
+1. Isolate target file server from local area network.
+2. Terminate infected system processes.
+3. Scan active directory for lateral movement indicators.
+4. Restore documents from cold backup storage.",Done,Bob Secure,Resolved but customer complained of side effects. Ticket flagged.,2026-06-02 07:32:33,2026-06-02 08:31:09,58.6,120,Met,0,1
+TCS Global,James Johnson,james.johnson@tcsglobal.com,Locked out of AD account - unable to login,I locked my active directory account after entering password incorrectly. Unable to login to workstation.,Locked out of AD account - unable to login. I locked my active directory account after entering password incorrectly. Unable to login to workstation.,Chat,Access,High,High,High,Service Desk L1,Negative,User entered expired password multiple times causing AD lockout policy trigger.,"1. Look up user Active Directory profile.
+2. Verify identity via security verification questions.
+3. Unlock AD account.
+4. Issue temporary reset password.","AI Recommended Resolution:
+1. Look up user Active Directory profile.
+2. Verify identity via security verification questions.
+3. Unlock AD account.
+4. Issue temporary reset password.",Done,Sally Support,Resolved but customer complained of side effects. Ticket flagged.,2026-06-02 10:13:33,2026-06-02 12:01:51,108.3,180,Met,0,1
+Apex Retail,Nancy Davis,nancy.davis@apexretail.com,Installation request for MS Visio and Project,I need MS Visio and Project installed on my local machine for project diagrams. Installation request.,Installation request for MS Visio and Project. I need MS Visio and Project installed on my local machine for project diagrams. Installation request.,Email,Software,High,Low,High,Application Support,Positive,Standard software request needing automated package push.,"1. Check software license pool availability.
+2. Push Visio MSI package through SCCM deployment.
+3. Verify app launcher on target machine.","AI Recommended Resolution:
+1. Check software license pool availability.
+2. Push Visio MSI package through SCCM deployment.
+3. Verify app launcher on target machine.",Done,Dave Debugger,Resolved but customer complained of side effects. Ticket flagged.,2026-06-02 13:22:33,2026-06-02 15:30:03,127.5,180,Met,0,1
+CloudSphere,Nancy Rodriguez,nancy.rodriguez@cloudsphere.com,Shared folder access request,Please grant access to the shared finance folder for audit files. Account creation and permissions request.,Shared folder access request. Please grant access to the shared finance folder for audit files. Account creation and permissions request.,Service Portal,Access,Low,Low,Low,IT Access Team,Neutral,Standard role change requiring access control modification.,"1. Verify manager approval via approval chain.
+2. Add user account to security group SG-Finance-Read.
+3. Force AD replication.","AI Recommended Resolution:
+1. Verify manager approval via approval chain.
+2. Add user account to security group SG-Finance-Read.
+3. Force AD replication.",Done,Tina Key,Resolved but customer complained of side effects. Ticket flagged.,2026-06-02 16:20:33,2026-06-02 22:00:51,340.3,960,Met,0,1
+MedSystems,Robert Brown,robert.brown@medsystems.com,Database issue - query locking causing timeouts,"Database issue. Long running lock blocks multiple critical queries on application database, causing slow response times.","Database issue - query locking causing timeouts. Database issue. Long running lock blocks multiple critical queries on application database, causing slow response times.",Email,Database,Medium,Medium,Medium,Database Team,Neutral,Unindexed foreign keys causing table scans and deadlock loops.,"1. Run sp_who2 to identify blocking SPID.
+2. Terminate blocker process safely.
+3. Add missing query index.
+4. Refactor transaction isolation level.","AI Recommended Resolution:
+1. Run sp_who2 to identify blocking SPID.
+2. Terminate blocker process safely.
+3. Add missing query index.
+4. Refactor transaction isolation level.",Done,Carl Query,Resolved but customer complained of side effects. Ticket flagged.,2026-06-02 18:55:33,2026-06-02 20:16:27,80.9,480,Met,0,1
+InnoTech Ltd,James Brown,james.brown@innotechltd.com,Phishing email detected targeting team inbox,We received an email looking like it's from executive leadership asking for urgent bank info. Possible phishing attempt.,Phishing email detected targeting team inbox. We received an email looking like it's from executive leadership asking for urgent bank info. Possible phishing attempt.,Manual,Security,Critical,Critical,Critical,Security Team,Negative,Spoofed email domain bypassing DMARC policies.,"1. Analyze email header headers.
+2. Block sender domain at Exchange Gateway.
+3. Delete phishing emails from user mailboxes.
+4. Update SPF/DKIM policy records.","AI Recommended Resolution:
+1. Analyze email header headers.
+2. Block sender domain at Exchange Gateway.
+3. Delete phishing emails from user mailboxes.
+4. Update SPF/DKIM policy records.",Done,Bob Secure,Resolved but customer complained of side effects. Ticket flagged.,2026-06-02 22:26:33,2026-06-03 00:18:57,112.4,120,Met,0,1
+FinBank Corp,Lisa Williams,lisa.williams@finbankcorp.com,OS Issue - Windows update failed loop,My laptop is stuck in an infinite loop saying 'Undoing changes made to your computer' after a Windows Update failed. High urgency.,OS Issue - Windows update failed loop. My laptop is stuck in an infinite loop saying 'Undoing changes made to your computer' after a Windows Update failed. High urgency.,Service Portal,Software,High,High,High,Application Support,Negative,Corrupt system registry hive after interrupted Windows update transaction.,"1. Access WinRE recovery menu.
+2. Revert pending system updates via Command Prompt command dism.
+3. Run SFC scan.
+4. Reboot OS normally.","AI Recommended Resolution:
+1. Access WinRE recovery menu.
+2. Revert pending system updates via Command Prompt command dism.
+3. Run SFC scan.
+4. Reboot OS normally.",Done,Dave Debugger,Resolved but customer complained of side effects. Ticket flagged.,2026-06-03 00:56:33,2026-06-03 01:32:57,36.4,180,Met,0,1
+MedSystems,David Hernandez,david.hernandez@medsystems.com,Complete outage in office WiFi network,"The entire second floor is experiencing a complete outage on the office WiFi network. No devices can connect, server down for local services.","Complete outage in office WiFi network. The entire second floor is experiencing a complete outage on the office WiFi network. No devices can connect, server down for local services.",Manual,Network,Critical,Critical,Critical,Infra Team,Negative,Core router stack loop due to a misconfigured VLAN switch.,"1. Log into core router switch interface.
+2. Reset switch loop protection control.
+3. Restore router default VLAN routing configuration.
+4. Restart office access points.","AI Recommended Resolution:
+1. Log into core router switch interface.
+2. Reset switch loop protection control.
+3. Restore router default VLAN routing configuration.
+4. Restart office access points.",Done,Steven Cable,Resolved but customer complained of side effects. Ticket flagged.,2026-06-03 04:13:33,2026-06-03 05:22:57,69.4,120,Met,0,1
+InnoTech Ltd,Sarah Jones,sarah.jones@innotechltd.com,Database issue - query locking causing timeouts,"Database issue. Long running lock blocks multiple critical queries on application database, causing slow response times.","Database issue - query locking causing timeouts. Database issue. Long running lock blocks multiple critical queries on application database, causing slow response times.",Manual,Database,Critical,Medium,Critical,Database Team,Neutral,Unindexed foreign keys causing table scans and deadlock loops.,"1. Run sp_who2 to identify blocking SPID.
+2. Terminate blocker process safely.
+3. Add missing query index.
+4. Refactor transaction isolation level.","AI Recommended Resolution:
+1. Run sp_who2 to identify blocking SPID.
+2. Terminate blocker process safely.
+3. Add missing query index.
+4. Refactor transaction isolation level.",Done,Carl Query,Resolved but customer complained of side effects. Ticket flagged.,2026-06-03 06:59:33,2026-06-03 08:10:51,71.3,120,Met,0,1
+TCS Global,David Williams,david.williams@tcsglobal.com,Onboarding request for new engineer starting next week,"Please complete onboarding setup for the new team member, including account creation and onboarding documents.","Onboarding request for new engineer starting next week. Please complete onboarding setup for the new team member, including account creation and onboarding documents.",Service Portal,HR,High,Low,High,HR IT Team,Positive,Standard recruitment profile pipeline entry.,"1. Create AD login credentials.
+2. Allocate laptop and workspace peripherals.
+3. Provision Microsoft 365 license.
+4. Schedule HR welcome briefing.","AI Recommended Resolution:
+1. Create AD login credentials.
+2. Allocate laptop and workspace peripherals.
+3. Provision Microsoft 365 license.
+4. Schedule HR welcome briefing.",Done,Heidi HR,Resolved but customer complained of side effects. Ticket flagged.,2026-06-03 10:18:33,2026-06-03 12:07:15,108.7,180,Met,0,1
+FinBank Corp,William Davis,william.davis@finbankcorp.com,Database corruption in SQL Server,"Database corruption detected on DB-PROD-01. Customer table reports data page corruptions, database corruption threat, severe data loss risk.","Database corruption in SQL Server. Database corruption detected on DB-PROD-01. Customer table reports data page corruptions, database corruption threat, severe data loss risk.",Manual,Database,Critical,Critical,Critical,Database Team,Negative,Disk hardware controller write failure corrupted SQL database data pages.,"1. Run DBCC CHECKDB command.
+2. Restore database from last clean backup differential.
+3. Re-apply transaction logs.
+4. Validate record counts.","AI Recommended Resolution:
+1. Run DBCC CHECKDB command.
+2. Restore database from last clean backup differential.
+3. Re-apply transaction logs.
+4. Validate record counts.",Escalated,Carl Query,Requires L2 / L3 assistance. Transferring queue.,2026-06-03 13:16:33,,,120,In Progress,1,0
+TCS Global,Michael Gonzalez,michael.gonzalez@tcsglobal.com,Shared folder access request,Please grant access to the shared finance folder for audit files. Account creation and permissions request.,Shared folder access request. Please grant access to the shared finance folder for audit files. Account creation and permissions request.,Chat,Access,Low,Low,Low,IT Access Team,Neutral,Standard role change requiring access control modification.,"1. Verify manager approval via approval chain.
+2. Add user account to security group SG-Finance-Read.
+3. Force AD replication.","AI Recommended Resolution:
+1. Verify manager approval via approval chain.
+2. Add user account to security group SG-Finance-Read.
+3. Force AD replication.",Escalated,Tina Key,Requires L2 / L3 assistance. Transferring queue.,2026-06-03 16:14:33,,,960,In Progress,1,0
+FinBank Corp,Jessica Rodriguez,jessica.rodriguez@finbankcorp.com,Router configuration error in branch office,Branch office router is slow and throwing intermittent packet loss errors. Intermittent issue with routing tables.,Router configuration error in branch office. Branch office router is slow and throwing intermittent packet loss errors. Intermittent issue with routing tables.,Email,Network,Medium,Medium,Medium,Infra Team,Neutral,Corrupted BGP routing table entry on the branch router gateway.,"1. Reset branch gateway router.
+2. Clear BGP cache routing protocols.
+3. Re-sync routing metrics with the primary hub.","AI Recommended Resolution:
+1. Reset branch gateway router.
+2. Clear BGP cache routing protocols.
+3. Re-sync routing metrics with the primary hub.",Escalated,Steven Cable,Requires L2 / L3 assistance. Transferring queue.,2026-06-03 18:48:33,,,480,In Progress,1,0
+Apex Retail,Ashley Smith,ashley.smith@apexretail.com,Database issue - query locking causing timeouts,"Database issue. Long running lock blocks multiple critical queries on application database, causing slow response times.","Database issue - query locking causing timeouts. Database issue. Long running lock blocks multiple critical queries on application database, causing slow response times.",Chat,Database,Medium,Medium,Medium,Database Team,Neutral,Unindexed foreign keys causing table scans and deadlock loops.,"1. Run sp_who2 to identify blocking SPID.
+2. Terminate blocker process safely.
+3. Add missing query index.
+4. Refactor transaction isolation level.","AI Recommended Resolution:
+1. Run sp_who2 to identify blocking SPID.
+2. Terminate blocker process safely.
+3. Add missing query index.
+4. Refactor transaction isolation level.",Escalated,Carl Query,Requires L2 / L3 assistance. Transferring queue.,2026-06-03 22:22:33,,,480,In Progress,1,0
+FinBank Corp,Robert Gonzalez,robert.gonzalez@finbankcorp.com,Database issue - query locking causing timeouts,"Database issue. Long running lock blocks multiple critical queries on application database, causing slow response times.","Database issue - query locking causing timeouts. Database issue. Long running lock blocks multiple critical queries on application database, causing slow response times.",Chat,Database,Medium,Medium,Medium,Database Team,Neutral,Unindexed foreign keys causing table scans and deadlock loops.,"1. Run sp_who2 to identify blocking SPID.
+2. Terminate blocker process safely.
+3. Add missing query index.
+4. Refactor transaction isolation level.","AI Recommended Resolution:
+1. Run sp_who2 to identify blocking SPID.
+2. Terminate blocker process safely.
+3. Add missing query index.
+4. Refactor transaction isolation level.",Escalated,Nora Index,Requires L2 / L3 assistance. Transferring queue.,2026-06-04 00:42:33,,,480,In Progress,1,0
+MedSystems,David Johnson,david.johnson@medsystems.com,Office printer issue - paper jam and network offline,"The printer in the main hall has a printer issue. It says paper jam but we cleared it, and it remains offline.","Office printer issue - paper jam and network offline. The printer in the main hall has a printer issue. It says paper jam but we cleared it, and it remains offline.",Email,Hardware,Medium,Medium,Medium,Desktop Support,Neutral,Optical paper feed sensor dirty with paper dust.,"1. Open printer side access door.
+2. Clean the internal optical feed sensors with compressed air.
+3. Reset printer print spooler queue.","AI Recommended Resolution:
+1. Open printer side access door.
+2. Clean the internal optical feed sensors with compressed air.
+3. Reset printer print spooler queue.",Escalated,Peter Screws,Requires L2 / L3 assistance. Transferring queue.,2026-06-04 04:36:33,,,480,In Progress,1,0
+MedSystems,Thomas Johnson,thomas.johnson@medsystems.com,Onboarding request for new engineer starting next week,"Please complete onboarding setup for the new team member, including account creation and onboarding documents.","Onboarding request for new engineer starting next week. Please complete onboarding setup for the new team member, including account creation and onboarding documents.",Manual,HR,Low,Low,Low,HR IT Team,Positive,Standard recruitment profile pipeline entry.,"1. Create AD login credentials.
+2. Allocate laptop and workspace peripherals.
+3. Provision Microsoft 365 license.
+4. Schedule HR welcome briefing.","AI Recommended Resolution:
+1. Create AD login credentials.
+2. Allocate laptop and workspace peripherals.
+3. Provision Microsoft 365 license.
+4. Schedule HR welcome briefing.",Escalated,Richard Staff,Requires L2 / L3 assistance. Transferring queue.,2026-06-04 07:36:33,,,960,In Progress,1,0
+Apex Retail,Thomas Johnson,thomas.johnson@apexretail.com,Locked out of AD account - unable to login,I locked my active directory account after entering password incorrectly. Unable to login to workstation.,Locked out of AD account - unable to login. I locked my active directory account after entering password incorrectly. Unable to login to workstation.,Email,Access,High,High,High,Service Desk L1,Negative,User entered expired password multiple times causing AD lockout policy trigger.,"1. Look up user Active Directory profile.
+2. Verify identity via security verification questions.
+3. Unlock AD account.
+4. Issue temporary reset password.","AI Recommended Resolution:
+1. Look up user Active Directory profile.
+2. Verify identity via security verification questions.
+3. Unlock AD account.
+4. Issue temporary reset password.",Escalated,Sally Support,Requires L2 / L3 assistance. Transferring queue.,2026-06-04 10:10:33,,,180,In Progress,1,0
+TechCorp Services,Amanda Hernandez,amanda.hernandez@techcorpservices.com,Locked out of AD account - unable to login,I locked my active directory account after entering password incorrectly. Unable to login to workstation.,Locked out of AD account - unable to login. I locked my active directory account after entering password incorrectly. Unable to login to workstation.,Email,Access,High,High,High,Service Desk L1,Negative,User entered expired password multiple times causing AD lockout policy trigger.,"1. Look up user Active Directory profile.
+2. Verify identity via security verification questions.
+3. Unlock AD account.
+4. Issue temporary reset password.","AI Recommended Resolution:
+1. Look up user Active Directory profile.
+2. Verify identity via security verification questions.
+3. Unlock AD account.
+4. Issue temporary reset password.",Escalated,Sally Support,Requires L2 / L3 assistance. Transferring queue.,2026-06-04 12:39:33,,,180,In Progress,1,0
+InnoTech Ltd,Nancy Rodriguez,nancy.rodriguez@innotechltd.com,Onboarding request for new engineer starting next week,"Please complete onboarding setup for the new team member, including account creation and onboarding documents.","Onboarding request for new engineer starting next week. Please complete onboarding setup for the new team member, including account creation and onboarding documents.",Manual,HR,Low,Low,Low,HR IT Team,Positive,Standard recruitment profile pipeline entry.,"1. Create AD login credentials.
+2. Allocate laptop and workspace peripherals.
+3. Provision Microsoft 365 license.
+4. Schedule HR welcome briefing.","AI Recommended Resolution:
+1. Create AD login credentials.
+2. Allocate laptop and workspace peripherals.
+3. Provision Microsoft 365 license.
+4. Schedule HR welcome briefing.",Escalated,Heidi HR,Requires L2 / L3 assistance. Transferring queue.,2026-06-04 15:40:33,,,960,In Progress,1,0
+Apex Retail,Emily Davis,emily.davis@apexretail.com,Onboarding request for new engineer starting next week,"Please complete onboarding setup for the new team member, including account creation and onboarding documents.","Onboarding request for new engineer starting next week. Please complete onboarding setup for the new team member, including account creation and onboarding documents.",Service Portal,HR,Low,Low,Low,HR IT Team,Positive,Standard recruitment profile pipeline entry.,"1. Create AD login credentials.
+2. Allocate laptop and workspace peripherals.
+3. Provision Microsoft 365 license.
+4. Schedule HR welcome briefing.","AI Recommended Resolution:
+1. Create AD login credentials.
+2. Allocate laptop and workspace peripherals.
+3. Provision Microsoft 365 license.
+4. Schedule HR welcome briefing.",In Progress,Richard Staff,Ticket was reopened due to recurring issues.,2026-06-04 19:05:33,,,960,In Progress,0,1
+InnoTech Ltd,Daniel Miller,daniel.miller@innotechltd.com,Laptop screen flickers and blue screen of death,"My Lenovo laptop screen is flickering continuously, followed by a Blue Screen (BSOD). Client call scheduled, customer impacted.","Laptop screen flickers and blue screen of death. My Lenovo laptop screen is flickering continuously, followed by a Blue Screen (BSOD). Client call scheduled, customer impacted.",Manual,Hardware,High,High,High,Desktop Support,Negative,Faulty Intel HD Graphics driver causing memory dump crash.,"1. Boot laptop into Safe Mode.
+2. Uninstall current display drivers.
+3. Download and install verified Lenovo stable GPU drivers.
+4. Restart laptop.","AI Recommended Resolution:
+1. Boot laptop into Safe Mode.
+2. Uninstall current display drivers.
+3. Download and install verified Lenovo stable GPU drivers.
+4. Restart laptop.",In Progress,Peter Screws,Ticket was reopened due to recurring issues.,2026-06-04 22:32:33,,,180,In Progress,0,1
+Apex Retail,Emily Garcia,emily.garcia@apexretail.com,Phishing email detected targeting team inbox,We received an email looking like it's from executive leadership asking for urgent bank info. Possible phishing attempt.,Phishing email detected targeting team inbox. We received an email looking like it's from executive leadership asking for urgent bank info. Possible phishing attempt.,Service Portal,Security,Critical,Critical,Critical,Security Team,Negative,Spoofed email domain bypassing DMARC policies.,"1. Analyze email header headers.
+2. Block sender domain at Exchange Gateway.
+3. Delete phishing emails from user mailboxes.
+4. Update SPF/DKIM policy records.","AI Recommended Resolution:
+1. Analyze email header headers.
+2. Block sender domain at Exchange Gateway.
+3. Delete phishing emails from user mailboxes.
+4. Update SPF/DKIM policy records.",In Progress,Bob Secure,Ticket was reopened due to recurring issues.,2026-06-05 00:40:33,,,120,In Progress,0,1
+TCS Global,Thomas Miller,thomas.miller@tcsglobal.com,Certificate expired error on internal portal,"Users are getting a security warning on internal portals. Certificate expired error, unable to login securely.","Certificate expired error on internal portal. Users are getting a security warning on internal portals. Certificate expired error, unable to login securely.",Email,Security,High,High,High,Security Team,Negative,Automation script failed to renew SSL certificate from internal Certificate Authority.,"1. Generate CSR on web server.
+2. Submit request to corporate PKI portal.
+3. Install updated SSL certificate in IIS binding.
+4. Verify HTTPS routing.","AI Recommended Resolution:
+1. Generate CSR on web server.
+2. Submit request to corporate PKI portal.
+3. Install updated SSL certificate in IIS binding.
+4. Verify HTTPS routing.",In Progress,Bob Secure,Ticket was reopened due to recurring issues.,2026-06-05 04:30:33,,,180,In Progress,0,1
+Apex Retail,Sarah Brown,sarah.brown@apexretail.com,Ransomware alert on local fileserver,Ransomware warning! Internal file server files have extension .locked. Security breach! Complete outage of documents.,Ransomware alert on local fileserver. Ransomware warning! Internal file server files have extension .locked. Security breach! Complete outage of documents.,Service Portal,Security,Critical,Critical,Critical,Security Team,Negative,Malware execution via email attachment bypass.,"1. Isolate target file server from local area network.
+2. Terminate infected system processes.
+3. Scan active directory for lateral movement indicators.
+4. Restore documents from cold backup storage.","AI Recommended Resolution:
+1. Isolate target file server from local area network.
+2. Terminate infected system processes.
+3. Scan active directory for lateral movement indicators.
+4. Restore documents from cold backup storage.",In Progress,Bob Secure,Ticket was reopened due to recurring issues.,2026-06-05 07:18:33,,,120,In Progress,0,1
+Apex Retail,Michael Smith,michael.smith@apexretail.com,Database issue - query locking causing timeouts,"Database issue. Long running lock blocks multiple critical queries on application database, causing slow response times.","Database issue - query locking causing timeouts. Database issue. Long running lock blocks multiple critical queries on application database, causing slow response times.",Chat,Database,Medium,Medium,Medium,Database Team,Neutral,Unindexed foreign keys causing table scans and deadlock loops.,"1. Run sp_who2 to identify blocking SPID.
+2. Terminate blocker process safely.
+3. Add missing query index.
+4. Refactor transaction isolation level.","AI Recommended Resolution:
+1. Run sp_who2 to identify blocking SPID.
+2. Terminate blocker process safely.
+3. Add missing query index.
+4. Refactor transaction isolation level.",In Progress,Carl Query,Ticket was reopened due to recurring issues.,2026-06-05 10:34:33,,,480,In Progress,0,1
+EduLearn Inc,Emily Brown,emily.brown@edulearninc.com,Phishing email detected targeting team inbox,We received an email looking like it's from executive leadership asking for urgent bank info. Possible phishing attempt.,Phishing email detected targeting team inbox. We received an email looking like it's from executive leadership asking for urgent bank info. Possible phishing attempt.,Email,Security,Critical,Critical,Critical,Security Team,Negative,Spoofed email domain bypassing DMARC policies.,"1. Analyze email header headers.
+2. Block sender domain at Exchange Gateway.
+3. Delete phishing emails from user mailboxes.
+4. Update SPF/DKIM policy records.","AI Recommended Resolution:
+1. Analyze email header headers.
+2. Block sender domain at Exchange Gateway.
+3. Delete phishing emails from user mailboxes.
+4. Update SPF/DKIM policy records.",In Progress,Alice Firewall,Ticket was reopened due to recurring issues.,2026-06-05 12:38:33,,,120,In Progress,0,1
+MedSystems,Robert Miller,robert.miller@medsystems.com,Office printer issue - paper jam and network offline,"The printer in the main hall has a printer issue. It says paper jam but we cleared it, and it remains offline.","Office printer issue - paper jam and network offline. The printer in the main hall has a printer issue. It says paper jam but we cleared it, and it remains offline.",Manual,Hardware,Medium,Medium,Medium,Desktop Support,Neutral,Optical paper feed sensor dirty with paper dust.,"1. Open printer side access door.
+2. Clean the internal optical feed sensors with compressed air.
+3. Reset printer print spooler queue.","AI Recommended Resolution:
+1. Open printer side access door.
+2. Clean the internal optical feed sensors with compressed air.
+3. Reset printer print spooler queue.",In Progress,Jack Hardware,Ticket was reopened due to recurring issues.,2026-06-05 16:09:33,,,480,In Progress,0,1
+InnoTech Ltd,William Brown,william.brown@innotechltd.com,Database issue - query locking causing timeouts,"Database issue. Long running lock blocks multiple critical queries on application database, causing slow response times.","Database issue - query locking causing timeouts. Database issue. Long running lock blocks multiple critical queries on application database, causing slow response times.",Chat,Database,Medium,Medium,Medium,Database Team,Neutral,Unindexed foreign keys causing table scans and deadlock loops.,"1. Run sp_who2 to identify blocking SPID.
+2. Terminate blocker process safely.
+3. Add missing query index.
+4. Refactor transaction isolation level.","AI Recommended Resolution:
+1. Run sp_who2 to identify blocking SPID.
+2. Terminate blocker process safely.
+3. Add missing query index.
+4. Refactor transaction isolation level.",In Progress,Carl Query,Ticket was reopened due to recurring issues.,2026-06-05 19:13:33,,,480,In Progress,0,1
+MedSystems,John Jones,john.jones@medsystems.com,Database corruption in SQL Server,"Database corruption detected on DB-PROD-01. Customer table reports data page corruptions, database corruption threat, severe data loss risk.","Database corruption in SQL Server. Database corruption detected on DB-PROD-01. Customer table reports data page corruptions, database corruption threat, severe data loss risk.",Service Portal,Database,Critical,Critical,Critical,Database Team,Negative,Disk hardware controller write failure corrupted SQL database data pages.,"1. Run DBCC CHECKDB command.
+2. Restore database from last clean backup differential.
+3. Re-apply transaction logs.
+4. Validate record counts.","AI Recommended Resolution:
+1. Run DBCC CHECKDB command.
+2. Restore database from last clean backup differential.
+3. Re-apply transaction logs.
+4. Validate record counts.",In Progress,Carl Query,Ticket was reopened due to recurring issues.,2026-06-05 21:59:33,,,120,In Progress,0,1
+Apex Retail,Lisa Garcia,lisa.garcia@apexretail.com,Office printer issue - paper jam and network offline,"The printer in the main hall has a printer issue. It says paper jam but we cleared it, and it remains offline.","Office printer issue - paper jam and network offline. The printer in the main hall has a printer issue. It says paper jam but we cleared it, and it remains offline.",Manual,Hardware,Medium,Medium,Medium,Desktop Support,Neutral,Optical paper feed sensor dirty with paper dust.,"1. Open printer side access door.
+2. Clean the internal optical feed sensors with compressed air.
+3. Reset printer print spooler queue.","AI Recommended Resolution:
+1. Open printer side access door.
+2. Clean the internal optical feed sensors with compressed air.
+3. Reset printer print spooler queue.",Done,Peter Screws,Delayed resolution due to pending approvals and hardware parts arrival.,2026-06-06 01:06:33,2026-06-06 13:30:03,743.5,480,Breached,1,0
+EduLearn Inc,Amanda Wilson,amanda.wilson@edulearninc.com,Installation request for MS Visio and Project,I need MS Visio and Project installed on my local machine for project diagrams. Installation request.,Installation request for MS Visio and Project. I need MS Visio and Project installed on my local machine for project diagrams. Installation request.,Manual,Software,Low,Low,Low,Application Support,Positive,Standard software request needing automated package push.,"1. Check software license pool availability.
+2. Push Visio MSI package through SCCM deployment.
+3. Verify app launcher on target machine.","AI Recommended Resolution:
+1. Check software license pool availability.
+2. Push Visio MSI package through SCCM deployment.
+3. Verify app launcher on target machine.",Done,Dave Debugger,Delayed resolution due to pending approvals and hardware parts arrival.,2026-06-06 04:14:33,2026-06-06 22:22:39,1088.1,960,Breached,1,0
+TCS Global,David Rodriguez,david.rodriguez@tcsglobal.com,Office printer issue - paper jam and network offline,"The printer in the main hall has a printer issue. It says paper jam but we cleared it, and it remains offline.","Office printer issue - paper jam and network offline. The printer in the main hall has a printer issue. It says paper jam but we cleared it, and it remains offline.",Service Portal,Hardware,Medium,Medium,Medium,Desktop Support,Neutral,Optical paper feed sensor dirty with paper dust.,"1. Open printer side access door.
+2. Clean the internal optical feed sensors with compressed air.
+3. Reset printer print spooler queue.","AI Recommended Resolution:
+1. Open printer side access door.
+2. Clean the internal optical feed sensors with compressed air.
+3. Reset printer print spooler queue.",Done,Peter Screws,Delayed resolution due to pending approvals and hardware parts arrival.,2026-06-06 07:09:33,2026-06-06 15:57:27,527.9,480,Breached,1,0
+InnoTech Ltd,Karen Wilson,karen.wilson@innotechltd.com,Database issue - query locking causing timeouts,"Database issue. Long running lock blocks multiple critical queries on application database, causing slow response times.","Database issue - query locking causing timeouts. Database issue. Long running lock blocks multiple critical queries on application database, causing slow response times.",Chat,Database,Medium,Medium,Medium,Database Team,Neutral,Unindexed foreign keys causing table scans and deadlock loops.,"1. Run sp_who2 to identify blocking SPID.
+2. Terminate blocker process safely.
+3. Add missing query index.
+4. Refactor transaction isolation level.","AI Recommended Resolution:
+1. Run sp_who2 to identify blocking SPID.
+2. Terminate blocker process safely.
+3. Add missing query index.
+4. Refactor transaction isolation level.",Done,Carl Query,Delayed resolution due to pending approvals and hardware parts arrival.,2026-06-06 09:38:33,2026-06-06 20:53:03,674.5,480,Breached,1,0
+TechCorp Services,Daniel Wilson,daniel.wilson@techcorpservices.com,Application error - slow reports query,The inventory system reports dashboard is very slow and times out frequently. Report issue.,Application error - slow reports query. The inventory system reports dashboard is very slow and times out frequently. Report issue.,Manual,Application,Medium,Medium,Medium,Application Support,Neutral,Missing index on transaction_date column in reporting database.,"1. Analyze report query execution plan.
+2. Identify missing query indices.
+3. Implement index optimization.
+4. Verify dashboard rendering speed.","AI Recommended Resolution:
+1. Analyze report query execution plan.
+2. Identify missing query indices.
+3. Implement index optimization.
+4. Verify dashboard rendering speed.",Done,Dave Debugger,Delayed resolution due to pending approvals and hardware parts arrival.,2026-06-06 13:19:33,2026-06-07 01:43:51,744.3,480,Breached,1,0
+TechCorp Services,Amanda Hernandez,amanda.hernandez@techcorpservices.com,Complete outage in office WiFi network,"The entire second floor is experiencing a complete outage on the office WiFi network. No devices can connect, server down for local services.","Complete outage in office WiFi network. The entire second floor is experiencing a complete outage on the office WiFi network. No devices can connect, server down for local services.",Service Portal,Network,Critical,Critical,Critical,Infra Team,Negative,Core router stack loop due to a misconfigured VLAN switch.,"1. Log into core router switch interface.
+2. Reset switch loop protection control.
+3. Restore router default VLAN routing configuration.
+4. Restart office access points.","AI Recommended Resolution:
+1. Log into core router switch interface.
+2. Reset switch loop protection control.
+3. Restore router default VLAN routing configuration.
+4. Restart office access points.",Done,Robert Infra,Delayed resolution due to pending approvals and hardware parts arrival.,2026-06-06 16:17:33,2026-06-06 20:39:03,261.5,120,Breached,1,0
+TechCorp Services,Thomas Williams,thomas.williams@techcorpservices.com,Laptop screen flickers and blue screen of death,"My Lenovo laptop screen is flickering continuously, followed by a Blue Screen (BSOD). Client call scheduled, customer impacted.","Laptop screen flickers and blue screen of death. My Lenovo laptop screen is flickering continuously, followed by a Blue Screen (BSOD). Client call scheduled, customer impacted.",Service Portal,Hardware,High,High,High,Desktop Support,Negative,Faulty Intel HD Graphics driver causing memory dump crash.,"1. Boot laptop into Safe Mode.
+2. Uninstall current display drivers.
+3. Download and install verified Lenovo stable GPU drivers.
+4. Restart laptop.","AI Recommended Resolution:
+1. Boot laptop into Safe Mode.
+2. Uninstall current display drivers.
+3. Download and install verified Lenovo stable GPU drivers.
+4. Restart laptop.",Done,Jack Hardware,Delayed resolution due to pending approvals and hardware parts arrival.,2026-06-06 19:26:33,2026-06-07 00:17:21,290.8,180,Breached,1,0
+CloudSphere,Lisa Miller,lisa.miller@cloudsphere.com,Complete outage in office WiFi network,"The entire second floor is experiencing a complete outage on the office WiFi network. No devices can connect, server down for local services.","Complete outage in office WiFi network. The entire second floor is experiencing a complete outage on the office WiFi network. No devices can connect, server down for local services.",Chat,Network,Critical,Critical,Critical,Infra Team,Negative,Core router stack loop due to a misconfigured VLAN switch.,"1. Log into core router switch interface.
+2. Reset switch loop protection control.
+3. Restore router default VLAN routing configuration.
+4. Restart office access points.","AI Recommended Resolution:
+1. Log into core router switch interface.
+2. Reset switch loop protection control.
+3. Restore router default VLAN routing configuration.
+4. Restart office access points.",Done,Steven Cable,Delayed resolution due to pending approvals and hardware parts arrival.,2026-06-06 21:56:33,2026-06-07 02:55:03,298.5,120,Breached,1,0
+InnoTech Ltd,Emily Martinez,emily.martinez@innotechltd.com,Request for a new wireless keyboard and desktop mouse,My keyboard has some keys that do not work. Submitting an information request for a replacement keyboard.,Request for a new wireless keyboard and desktop mouse. My keyboard has some keys that do not work. Submitting an information request for a replacement keyboard.,Manual,Hardware,Low,Low,Low,Desktop Support,Positive,Physical wear and tear of keyboard membrane.,"1. Assign replacement keyboard from desktop support inventory.
+2. Update hardware serial number in asset tracker.","AI Recommended Resolution:
+1. Assign replacement keyboard from desktop support inventory.
+2. Update hardware serial number in asset tracker.",Done,Jack Hardware,Delayed resolution due to pending approvals and hardware parts arrival.,2026-06-07 00:48:33,2026-06-07 19:27:51,1119.3,960,Breached,1,0
+FinBank Corp,Thomas Hernandez,thomas.hernandez@finbankcorp.com,Onboarding request for new engineer starting next week,"Please complete onboarding setup for the new team member, including account creation and onboarding documents.","Onboarding request for new engineer starting next week. Please complete onboarding setup for the new team member, including account creation and onboarding documents.",Service Portal,HR,Low,Low,Low,HR IT Team,Positive,Standard recruitment profile pipeline entry.,"1. Create AD login credentials.
+2. Allocate laptop and workspace peripherals.
+3. Provision Microsoft 365 license.
+4. Schedule HR welcome briefing.","AI Recommended Resolution:
+1. Create AD login credentials.
+2. Allocate laptop and workspace peripherals.
+3. Provision Microsoft 365 license.
+4. Schedule HR welcome briefing.",Done,Heidi HR,Delayed resolution due to pending approvals and hardware parts arrival.,2026-06-07 03:47:33,2026-06-08 00:19:15,1231.7,960,Breached,1,0
