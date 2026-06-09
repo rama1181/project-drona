@@ -2,9 +2,9 @@ import streamlit as st
 from datetime import datetime
 
 # ─── Constants ────────────────────────────────────────────────────────────────
-PRIORITY_ORDER = {"Critical": 1, "High": 2, "Medium": 3, "Low": 4}
-PRIORITY_UP    = {"Low": "Medium", "Medium": "High", "High": "Critical", "Critical": "Critical"}
-SLA_FALLBACK   = {"Critical": 120, "High": 180, "Medium": 480, "Low": 960}
+PRIORITY_ORDER = {"High": 1, "Medium": 2, "Low": 3}
+PRIORITY_UP    = {"Low": "Medium", "Medium": "High", "High": "High"}
+SLA_FALLBACK   = {"High": 180, "Medium": 480, "Low": 960}
 
 PRIORITY_COLORS = {
     "Critical": ("#FF4B4B", "rgba(255,75,75,0.18)"),

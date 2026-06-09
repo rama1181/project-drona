@@ -18,20 +18,55 @@ def verify_credentials(username, password):
     return None
 
 
+def apply_authenticated_layout():
+    """Reset layout styles after login so dashboard tabs are not trapped in login-card CSS."""
+    st.markdown("""
+        <style>
+        #MainMenu, header, footer { visibility: visible !important; }
+        [data-testid="stAppViewContainer"] {
+            background: #0f0f1a !important;
+            height: auto !important;
+            overflow: auto !important;
+        }
+        [data-testid="stAppViewBlockContainer"], .main .block-container {
+            width: 100% !important;
+            max-width: 100% !important;
+            background: transparent !important;
+            border: none !important;
+            border-radius: 0 !important;
+            box-shadow: none !important;
+            padding: 1.5rem 2rem 2rem !important;
+            text-align: left !important;
+            backdrop-filter: none !important;
+            position: static !important;
+            top: auto !important;
+            left: auto !important;
+            transform: none !important;
+            margin: 0 auto !important;
+        }
+        </style>
+        <script>document.body.removeAttribute('data-login-page');</script>
+    """, unsafe_allow_html=True)
+
+
 def login():
     """
     Renders a compact, modern SaaS-style login page.
     No scrolling required on standard desktop/laptop screens.
+    ONLY renders when user is NOT logged in (prevents style conflicts).
     """
+    # CRITICAL: Stop rendering if already logged in
+    if st.session_state.get('logged_in', False):
+        return
+    
     st.markdown("""
         <style>
-        /* ── Hide Streamlit chrome ── */
-        #MainMenu { visibility: hidden; }
-        header    { visibility: hidden; }
-        footer    { visibility: hidden; }
+        /* ── LOGIN PAGE ONLY STYLES (scoped — does not affect dashboard) ── */
+        body[data-login-page="true"] #MainMenu { visibility: hidden; }
+        body[data-login-page="true"] header { visibility: hidden; }
+        body[data-login-page="true"] footer { visibility: hidden; }
 
-        /* ── Full-page dark gradient ── */
-        [data-testid="stAppViewContainer"] {
+        body[data-login-page="true"] [data-testid="stAppViewContainer"] {
             background: radial-gradient(ellipse at 60% 30%,
                 rgba(79,172,254,0.08) 0%, transparent 60%),
                 linear-gradient(160deg, #0a0a12 0%, #0f0f1a 100%) !important;
@@ -39,8 +74,8 @@ def login():
             overflow: hidden !important;
         }
 
-        /* ── Style block container as the login card ── */
-        [data-testid="stAppViewBlockContainer"], .block-container {
+        body[data-login-page="true"] [data-testid="stAppViewBlockContainer"],
+        body[data-login-page="true"] .block-container {
             width: 380px !important;
             max-width: 380px !important;
             background: rgba(255,255,255,0.04) !important;
@@ -51,8 +86,6 @@ def login():
             padding: 1.8rem 2rem 1.2rem !important;
             text-align: center !important;
             backdrop-filter: blur(20px) !important;
-            
-            /* Center perfectly on screen */
             position: absolute !important;
             top: 50% !important;
             left: 50% !important;
@@ -134,6 +167,7 @@ def login():
         }
         .lc-hint strong { color: #8a8a9a; }
         </style>
+        <script>document.body.setAttribute('data-login-page', 'true');</script>
     """, unsafe_allow_html=True)
 
     # Header block: icon → title → subtitle → divider
@@ -159,8 +193,11 @@ def login():
         if username and password:
             user = verify_credentials(username, password)
             if user:
+                # Store in session state
                 st.session_state['logged_in'] = True
                 st.session_state['user'] = user
+                st.session_state['_authenticated'] = True
+                st.session_state['_login_welcome'] = user['username']
                 st.rerun()
             else:
                 st.error("Invalid credentials. Please try again.")

@@ -232,8 +232,7 @@ def check_and_apply_company_priority_escalation(company_name, current_priority):
     PRIORITY_ESCALATION = {
         "Low":      "Medium",
         "Medium":   "High",
-        "High":     "Critical",
-        "Critical": "Critical"  # already max
+        "High":     "High"  # already max
     }
     breach_count = get_company_breach_count(company_name)
     if breach_count >= 3:
@@ -332,50 +331,216 @@ def update_ticket_workflow(ticket_id, status, remarks, engineer, updated_by):
     return True
 
 
-def get_all_tickets(filters=None):
+def get_all_tickets(filters=None, page=1, page_size=100):
     """
-    Retrieves all tickets with enterprise sort:
-    Critical > High > Medium > Low, Breached first, then created_date ASC.
+    Retrieves tickets with enterprise sort and PAGINATION for performance:
+    High > Medium > Low, Breached first, then created_date ASC.
+    
+    Args:
+        filters: Dict with optional filters (department, status, priority, search, company_name)
+        page: Page number (1-indexed)
+        page_size: Number of tickets per page (default 100)
+    
+    Returns:
+        Dict with 'tickets', 'total_count', 'total_pages', 'current_page'
     """
     conn = get_connection()
-    query = "SELECT * FROM tickets WHERE 1=1"
+    
+    # Build WHERE clause
+    where_clause = "WHERE 1=1"
     params = []
 
     if filters:
         if filters.get('department'):
-            query += " AND department = ?"
+            where_clause += " AND department = ?"
             params.append(filters['department'])
         if filters.get('status'):
-            query += " AND status = ?"
+            where_clause += " AND status = ?"
             params.append(filters['status'])
         if filters.get('priority'):
-            query += " AND final_priority = ?"
+            where_clause += " AND final_priority = ?"
             params.append(filters['priority'])
         if filters.get('search'):
-            query += " AND (ticket_subject LIKE ? OR ticket_description LIKE ? OR company_name LIKE ?)"
+            where_clause += " AND (ticket_subject LIKE ? OR ticket_description LIKE ? OR company_name LIKE ?)"
             sp = f"%{filters['search']}%"
             params.extend([sp, sp, sp])
         if filters.get('company_name'):
-            query += " AND company_name = ?"
+            where_clause += " AND company_name = ?"
             params.append(filters['company_name'])
 
-    query += """
+    # Count total matching tickets
+    count_query = f"SELECT COUNT(*) FROM tickets {where_clause}"
+    cursor = conn.cursor()
+    cursor.execute(count_query, params)
+    total_count = cursor.fetchone()[0]
+    
+    # Calculate pagination
+    total_pages = (total_count + page_size - 1) // page_size  # Ceiling division
+    offset = (page - 1) * page_size
+    
+    # Fetch paginated results
+    query = f"""
+        SELECT * FROM tickets {where_clause}
         ORDER BY
             CASE final_priority
-                WHEN 'Critical' THEN 1
-                WHEN 'High'     THEN 2
-                WHEN 'Medium'   THEN 3
+                WHEN 'High'     THEN 1
+                WHEN 'Medium'   THEN 2
+                WHEN 'Low'      THEN 3
                 ELSE 4
             END ASC,
             CASE sla_status WHEN 'Breached' THEN 1 ELSE 2 END ASC,
             created_date ASC
+        LIMIT ? OFFSET ?
     """
-
-    cursor = conn.cursor()
-    cursor.execute(query, params)
+    
+    cursor.execute(query, params + [page_size, offset])
     tickets = [dict(row) for row in cursor.fetchall()]
     conn.close()
-    return tickets
+    
+    return {
+        'tickets': tickets,
+        'total_count': total_count,
+        'total_pages': total_pages,
+        'current_page': page,
+        'page_size': page_size
+    }
+
+
+def get_workspace_stats(role, department=None, company_name=None):
+    """Fast aggregate counts for sidebar stats (no full table scan into Python)."""
+    conn = get_connection()
+    cursor = conn.cursor()
+    if role == 'Admin':
+        cursor.execute(
+            "SELECT COUNT(*), SUM(CASE WHEN status='Done' THEN 1 ELSE 0 END) FROM tickets"
+        )
+    elif role == 'Company User':
+        cursor.execute(
+            "SELECT COUNT(*), SUM(CASE WHEN status='Done' THEN 1 ELSE 0 END) "
+            "FROM tickets WHERE company_name=?",
+            (company_name,),
+        )
+    else:
+        cursor.execute(
+            "SELECT COUNT(*), SUM(CASE WHEN status='Done' THEN 1 ELSE 0 END) "
+            "FROM tickets WHERE department=?",
+            (department,),
+        )
+    t_total, t_closed = cursor.fetchone()
+    conn.close()
+    t_total = t_total or 0
+    t_closed = t_closed or 0
+    return t_total, t_closed, t_total - t_closed
+
+
+def get_sla_dashboard_aggregates():
+    """SQL-only aggregates for SLA dashboard — avoids loading 10k+ ticket rows."""
+    conn = get_connection()
+    cursor = conn.cursor()
+
+    cursor.execute("""
+        SELECT
+            COUNT(*) AS total,
+            SUM(CASE WHEN status != 'Done' THEN 1 ELSE 0 END) AS open_count,
+            SUM(CASE WHEN status = 'Done' THEN 1 ELSE 0 END) AS closed_count,
+            SUM(CASE WHEN sla_status = 'Breached' THEN 1 ELSE 0 END) AS breaches,
+            AVG(CASE WHEN status = 'Done' THEN resolution_time_mins END) AS avg_res,
+            SUM(CASE WHEN status = 'Done' AND sla_status = 'Met' THEN 1 ELSE 0 END) AS sla_met,
+            SUM(CASE WHEN failure_case_flag = 1 THEN 1 ELSE 0 END) AS failure_count
+        FROM tickets
+    """)
+    summary = dict(cursor.fetchone())
+
+    cursor.execute("""
+        SELECT department, status, COUNT(*) AS counts
+        FROM tickets
+        GROUP BY department, status
+    """)
+    workload = [dict(row) for row in cursor.fetchall()]
+
+    cursor.execute("""
+        SELECT incident_type, COUNT(*) AS count
+        FROM tickets
+        GROUP BY incident_type
+    """)
+    incident_dist = [dict(row) for row in cursor.fetchall()]
+
+    cursor.execute("""
+        SELECT final_priority, COUNT(*) AS count
+        FROM tickets
+        GROUP BY final_priority
+    """)
+    priority_dist = [dict(row) for row in cursor.fetchall()]
+
+    cursor.execute("""
+        SELECT sla_status, COUNT(*) AS count
+        FROM tickets
+        GROUP BY sla_status
+    """)
+    sla_dist = [dict(row) for row in cursor.fetchall()]
+
+    cursor.execute("""
+        SELECT
+            department,
+            SUM(CASE WHEN status != 'Done' THEN 1 ELSE 0 END) AS d_open,
+            SUM(CASE WHEN status = 'Done' THEN 1 ELSE 0 END) AS d_closed,
+            AVG(CASE WHEN status = 'Done' THEN resolution_time_mins END) AS d_avg_res
+        FROM tickets
+        GROUP BY department
+    """)
+    dept_capacity = [dict(row) for row in cursor.fetchall()]
+    conn.close()
+
+    closed = summary.get('closed_count') or 0
+    sla_met = summary.get('sla_met') or 0
+    summary['sla_compliance'] = (sla_met / closed * 100) if closed > 0 else 100.0
+    summary['avg_res'] = summary.get('avg_res') or 0.0
+    summary['workload'] = workload
+    summary['incident_dist'] = incident_dist
+    summary['priority_dist'] = priority_dist
+    summary['sla_dist'] = sla_dist
+    summary['dept_capacity'] = dept_capacity
+    return summary
+
+
+def get_audit_logs(page=1, page_size=200):
+    """Paginated audit logs — avoids loading entire history table."""
+    conn = get_connection()
+    cursor = conn.cursor()
+    cursor.execute("SELECT COUNT(*) FROM ticket_history")
+    total_count = cursor.fetchone()[0]
+    total_pages = max(1, (total_count + page_size - 1) // page_size)
+    offset = (page - 1) * page_size
+
+    cursor.execute("""
+        SELECT
+            h.history_id,
+            h.ticket_id,
+            t.ticket_subject,
+            t.company_name,
+            t.created_date AS ticket_created_date,
+            t.closed_date AS ticket_closed_date,
+            t.resolution_time_mins,
+            h.old_status,
+            h.new_status,
+            h.updated_by,
+            h.updated_time AS action_time,
+            h.remarks,
+            h.sla_mins_remaining,
+            h.sla_status_at_update
+        FROM ticket_history h
+        JOIN tickets t ON h.ticket_id = t.ticket_id
+        ORDER BY h.history_id DESC
+        LIMIT ? OFFSET ?
+    """, (page_size, offset))
+    logs = [dict(row) for row in cursor.fetchall()]
+    conn.close()
+    return {
+        'logs': logs,
+        'total_count': total_count,
+        'total_pages': total_pages,
+        'current_page': page,
+    }
 
 
 def get_ticket_history(ticket_id):
@@ -390,6 +555,110 @@ def get_ticket_history(ticket_id):
     history = [dict(row) for row in cursor.fetchall()]
     conn.close()
     return history
+
+
+def get_department_audit_logs(department, page=1, page_size=200):
+    """Paginated audit logs for a specific department."""
+    conn = get_connection()
+    cursor = conn.cursor()
+    
+    # Count total logs for this department
+    cursor.execute("""
+        SELECT COUNT(*)
+        FROM ticket_history h
+        JOIN tickets t ON h.ticket_id = t.ticket_id
+        WHERE t.department = ?
+    """, (department,))
+    total_count = cursor.fetchone()[0]
+    total_pages = max(1, (total_count + page_size - 1) // page_size)
+    offset = (page - 1) * page_size
+    
+    # Fetch paginated logs
+    cursor.execute("""
+        SELECT
+            h.history_id,
+            h.ticket_id,
+            t.ticket_subject,
+            t.created_date AS ticket_created_date,
+            t.closed_date AS ticket_closed_date,
+            t.resolution_time_mins,
+            h.old_status,
+            h.new_status,
+            h.updated_by,
+            h.updated_time AS action_time,
+            h.remarks,
+            h.sla_mins_remaining,
+            h.sla_status_at_update
+        FROM ticket_history h
+        JOIN tickets t ON h.ticket_id = t.ticket_id
+        WHERE t.department = ?
+        ORDER BY h.history_id DESC
+        LIMIT ? OFFSET ?
+    """, (department, page_size, offset))
+    logs = [dict(row) for row in cursor.fetchall()]
+    conn.close()
+    
+    return {
+        'logs': logs,
+        'total_count': total_count,
+        'total_pages': total_pages,
+        'current_page': page,
+    }
+
+
+def get_department_sla_aggregates(department):
+    """SQL-only aggregates for department SLA dashboard — no large data loads."""
+    conn = get_connection()
+    cursor = conn.cursor()
+
+    cursor.execute("""
+        SELECT
+            COUNT(*) AS total,
+            SUM(CASE WHEN status != 'Done' THEN 1 ELSE 0 END) AS open_count,
+            SUM(CASE WHEN status = 'Done' THEN 1 ELSE 0 END) AS closed_count,
+            SUM(CASE WHEN sla_status = 'Breached' THEN 1 ELSE 0 END) AS breaches,
+            AVG(CASE WHEN status = 'Done' THEN resolution_time_mins END) AS avg_res,
+            SUM(CASE WHEN status = 'Done' AND sla_status = 'Met' THEN 1 ELSE 0 END) AS sla_met,
+            SUM(CASE WHEN failure_case_flag = 1 THEN 1 ELSE 0 END) AS failure_count
+        FROM tickets
+        WHERE department = ?
+    """, (department,))
+    summary = dict(cursor.fetchone())
+
+    cursor.execute("""
+        SELECT incident_type, COUNT(*) AS count
+        FROM tickets
+        WHERE department = ?
+        GROUP BY incident_type
+    """, (department,))
+    incident_dist = [dict(row) for row in cursor.fetchall()]
+
+    cursor.execute("""
+        SELECT final_priority, COUNT(*) AS count
+        FROM tickets
+        WHERE department = ?
+        GROUP BY final_priority
+    """, (department,))
+    priority_dist = [dict(row) for row in cursor.fetchall()]
+
+    cursor.execute("""
+        SELECT sla_status, COUNT(*) AS count
+        FROM tickets
+        WHERE department = ?
+        GROUP BY sla_status
+    """, (department,))
+    sla_dist = [dict(row) for row in cursor.fetchall()]
+
+    conn.close()
+
+    closed = summary.get('closed_count') or 0
+    sla_met = summary.get('sla_met') or 0
+    summary['sla_compliance'] = (sla_met / closed * 100) if closed > 0 else 100.0
+    summary['avg_res'] = summary.get('avg_res') or 0.0
+    summary['incident_dist'] = incident_dist
+    summary['priority_dist'] = priority_dist
+    summary['sla_dist'] = sla_dist
+    return summary
 
 
 def get_gmail_emails():

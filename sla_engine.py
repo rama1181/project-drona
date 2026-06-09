@@ -1,8 +1,7 @@
 from datetime import datetime
 
-# SLA Limits in minutes
+# SLA Limits in minutes (3 priority levels)
 SLA_LIMITS = {
-    "Critical": 120,    # 2 Hours
     "High": 180,        # 3 Hours
     "Medium": 480,      # 8 Hours
     "Low": 960          # 16 Hours

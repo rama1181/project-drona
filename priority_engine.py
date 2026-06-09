@@ -1,12 +1,10 @@
 import re
 
-# Keyword Lists
+# Keyword Lists (3 priority levels)
 KEYWORDS = {
-    "Critical": [
-        "server down", "production down", "security breach", "ransomware", 
-        "data loss", "payment failure", "database corruption", "complete outage"
-    ],
     "High": [
+        "server down", "production down", "security breach", "ransomware", 
+        "data loss", "payment failure", "database corruption", "complete outage",
         "urgent", "client call", "customer impacted", "unable to login", 
         "vpn down", "application unavailable", "certificate expired"
     ],
@@ -19,7 +17,6 @@ KEYWORDS = {
 }
 
 PRIORITY_RANKS = {
-    "Critical": 4,
     "High": 3,
     "Medium": 2,
     "Low": 1,
@@ -49,7 +46,7 @@ def resolve_priority(text, ml_predicted_prio):
     if ml_predicted_prio not in PRIORITY_RANKS:
         ml_predicted_prio = "Low"
         
-    # Hybrid Rule: Critical > High > Medium > Low
+    # Hybrid Rule: High > Medium > Low
     if PRIORITY_RANKS[kw_prio] >= PRIORITY_RANKS[ml_predicted_prio]:
         final_prio = kw_prio
     else:
